@@ -25,7 +25,7 @@ include_once ('../../modelo/mdl_rol.php');
                <center><a href="crear_roles.php" class="btn btn-primary"><i class="fa fa-plus" aria-hidden="true"></i>Crear Nuevo Rol</a></center>
                 <div class="tile-body">
                     <table class="table table-hover table-bordered" id="sampleTable">
-                        <thead>
+                        <thead class="thead-dark">
                         <tr>
                             <th>ID</th>
                             <th>NOMBRE</th>

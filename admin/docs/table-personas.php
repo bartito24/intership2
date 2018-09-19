@@ -8,13 +8,13 @@ $datos=$objeto->listar();
     <main class="app-content">
       <div class="app-title">
         <div>
-          <h1><i class="fa fa-th-list"></i>Usuarios</h1>
+          <h1><i class="fa fa-th-list"></i> Usuarios</h1>
           <p>Listado de Usuarios registrados en el sistema</p>
         </div>
         <ul class="app-breadcrumb breadcrumb side">
           <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-          <li class="breadcrumb-item">Usuarios</li>
-          <li class="breadcrumb-item active"><a href="#">Tabla Usuarios</a></li>
+          <li class="breadcrumb-item"> Personas</li>
+          <li class="breadcrumb-item active"><a href="#">Tabla Personas</a></li>
         </ul>
       </div>
       <div class="row">
@@ -22,7 +22,7 @@ $datos=$objeto->listar();
           <div class="tile">
             <div class="tile-body">
               <table class="table table-hover table-bordered" id="sampleTable">
-                <thead>
+                <thead class="thead-dark">
                   <tr>
                     <th><b>Nombres</th>
                     <th>Apellido Paterno</th>

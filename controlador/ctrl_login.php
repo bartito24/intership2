@@ -26,7 +26,7 @@ public function validar_ingreso($p){
    $row=mysqli_fetch_assoc($resp);
    if($row['usuario'] && $row['clave']){
        $_SESSION['usuario']=$row['usuario'];
-      echo "<script> window.location.href='../admin/docs/index.php';</script>";
+      echo "<script> window.location.href='../admin/docs/inicio.php';</script>";
    }
    else {
        echo "<script>alert('usuario o clave incorrecta')</script>";

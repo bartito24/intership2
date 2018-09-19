@@ -7,8 +7,8 @@ if($_SESSION['usuario']==""){
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <title>certificaciones y tramites</title>
-    <link rel="icon" type="image/png" href="../../logo/log2-01.png"  />
+    <title>Control y Seguimiento</title>
+    <link rel="icon" type="image/png" href="../../logo/apple-icon.png"  />
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -20,12 +20,12 @@ if($_SESSION['usuario']==""){
   </head>
   <body class="app sidebar-mini rtl"  >
   <!-- Navbar-->
-  <header class="app-header"><a class="app-header__logo" href="index.php">Yam</a>
+  <header class="app-header"><a class="app-header__logo" href="inicio.php">Internship</a>
       <!-- Sidebar toggle button--><a class="app-sidebar__toggle" href="#" data-toggle="sidebar" aria-label="Hide Sidebar"></a>
       <!-- Navbar Right Menu-->
       <ul class="app-nav">
           <li class="app-search">
-              <input class="app-search__input" type="search" placeholder="Search">
+              <input class="app-search__input" type="search" placeholder="Buscar...">
               <button class="app-search__button"><i class="fa fa-search"></i></button>
           </li>
           <!--Notification Menu-->
@@ -70,7 +70,7 @@ if($_SESSION['usuario']==""){
               </ul>
           </li>
           <!-- User Menu-->
-          <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i>&nbsp;<?php echo $_SESSION['rol']?></a>
+          <li class="dropdown"><a class="app-nav__item" href="#" data-toggle="dropdown" aria-label="Open Profile Menu"><i class="fa fa-user fa-lg"></i> &nbsp;<?php echo $_SESSION['rol']?></a>
               <ul class="dropdown-menu settings-menu dropdown-menu-right">
                   <li><a class="dropdown-item" href="page-user.html"><i class="fa fa-cog fa-lg"></i>
                           Configuraciones</a></li>
@@ -83,7 +83,7 @@ if($_SESSION['usuario']==""){
   <!-- Sidebar menu-->
   <div class="app-sidebar__overlay" data-toggle="sidebar"></div>
   <aside class="app-sidebar">
-      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="../../imagenes/default_user.png" alt="User Image">
+      <div class="app-sidebar__user"><img class="app-sidebar__user-avatar" src="../../imagenes/userc.png" alt="User Image">
           <div>
               <p class="app-sidebar__user-name"><?php echo $_SESSION['nombre']?></p>
               <p class="app-sidebar__user-designation"><?php echo $_SESSION['papellido']." ".$_SESSION['sapellido']?></p>
@@ -91,55 +91,68 @@ if($_SESSION['usuario']==""){
       </div>
       <ul class="app-menu">
           <?php if ($_SESSION['rol']=='administrador') {?>
-          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-users"></i><span class="app-menu__label">Usuarios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
 
               <ul class="treeview-menu" >
                   <!--<li ><a class="treeview-item" href = "agregar-persona.php" ><i class="icon fa fa-circle-o" ></i > Crear Estudiante </a ></li >-->
-                  <li ><a class="treeview-item" href = "agregar-empleado.php" ><i class="icon fa fa-circle-o" ></i >Registrar</a ></li >
-                  <li ><a class="treeview-item" href = "table-personas.php" ><i class="icon fa fa-circle-o" ></i > Listar Registros</a ></li >
+                  <li ><a class="treeview-item" href = "agregar-empleado.php" ><i class="icon fa fa-user-plus" ></i > Registrar</a ></li >
+                  <li ><a class="treeview-item" href = "table-personas.php" ><i class="icon fa fa-list" ></i > Listar Registros</a ></li >
                   <!--<li ><a class="treeview-item" href = "agregar_usuario.php" ><i class="icon fa fa-circle-o" ></i > Agregar Cuenta </a ></li >-->
-                  <li ><a class="treeview-item" href = "listar_usuario.php" ><i class="icon fa fa-circle-o" ></i > Listar Usuarios </a ></li >
-                  <li ><a class="treeview-item" href = "crear_privilegios.php" ><i class="icon fa fa-circle-o" ></i > Crear privilegios </a ></li >
-                  <li ><a class="treeview-item" href = "listar_privilegios.php" ><i class="icon fa fa-circle-o" ></i > Listar Privilegios</a ></li >
+                  <li ><a class="treeview-item" href = "listar_usuario.php" ><i class="icon fa fa-list" ></i > Listar Usuarios </a ></li >
+                  <li ><a class="treeview-item" href = "crear_privilegios.php" ><i class="icon fa fa-plus-square" ></i > Crear Privilegios </a ></li >
+                  <li ><a class="treeview-item" href = "listar_privilegios.php" ><i class="icon fa fa-list" ></i > Listar Privilegios</a ></li >
               </ul >
 
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Roles</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-address-book"></i><span class="app-menu__label">Roles</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-            <li><a class="treeview-item" href="crear_roles.php"><i class="icon fa fa-circle-o"></i> Crear</a></li>
-              <li><a class="treeview-item" href="vst_rol1.php"><i class="icon fa fa-circle-o"></i>Listar</a></li>
+            <li><a class="treeview-item" href="crear_roles.php"><i class="icon fa fa-plus-square"></i> Crear</a></li>
+              <li><a class="treeview-item" href="vst_rol1.php"><i class="icon fa fa-list"></i> Listar</a></li>
 
 
-            <li><a class="treeview-item" href="https://fontawesome.com/v4.7.0/icons/" target="_blank" rel="noopener"><i class="icon fa fa-circle-o"></i> Font Icons</a></li>
+            <!--<li><a class="treeview-item" href="https://fontawesome.com/v4.7.0/icons/" target="_blank" rel="noopener"><i class="icon fa fa-circle-o"></i> Font Icons</a></li>
             <li><a class="treeview-item" href="ui-cards.html"><i class="icon fa fa-circle-o"></i> Cards</a></li>
-            <li><a class="treeview-item" href="widgets.html"><i class="icon fa fa-circle-o"></i> Widgets</a></li>
+            <li><a class="treeview-item" href="widgets.html"><i class="icon fa fa-circle-o"></i> Widgets</a></li>-->
           </ul>
         </li>
           <?php  }?>
+          <!--    Carreras      -->
+          <?php if ($_SESSION['rol']=='administrador') {?>
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-bed"></i><span class="app-menu__label">Carreras</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+
+                  <!--<li><a class="treeview-item" href="cursos_externos.php"><i class="icon fa fa-circle-o"></i>Cursos</a></li>
+                  <li><a class="treeview-item" href="listar_cursoexterno.php"><i class="icon fa fa-circle-o"></i>Listar Cursos</a></li>-->
+                  <li><a class="treeview-item" href="crear_carrera.php"><i class="icon fa fa-plus-square"></i>Crear Carrera</a></li>
+                  <li><a class="treeview-item" href="listar_carrera.php"><i class="icon fa fa-list"></i>Listar Carreras</a></li>
+
+              </ul>
+              <?php  }?>
+              <!--    Empresas   -->
+              <?php if ($_SESSION['rol']=='administrador') {?>
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-industry"></i><span class="app-menu__label">Empresas</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+
+                  <!--<li><a class="treeview-item" href="cursos_externos.php"><i class="icon fa fa-circle-o"></i>Cursos</a></li>
+                  <li><a class="treeview-item" href="listar_cursoexterno.php"><i class="icon fa fa-circle-o"></i>Listar Cursos</a></li>-->
+                  <li><a class="treeview-item" href="crear_empresa.php"><i class="icon fa fa-plus-square"></i>Crear Empresa</a></li>
+                  <li><a class="treeview-item" href="listar_empresa.php"><i class="icon fa fa-list"></i>Listar Empresas</a></li>
+
+              </ul>
+              <?php  }?>
 <!--    Tramites      -->
-          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Tramites</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-database"></i><span class="app-menu__label">Pasantias</span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
                 <?php if ($_SESSION['rol']=='administrador') {?>
-                <li><a class="treeview-item" href="iniciar_tramite.php"><i class="icon fa fa-circle-o"></i>Iniciar Tramite</a></li>
-                <li><a class="treeview-item" href="tramites.php"><i class="icon fa fa-circle-o"></i>Crear Tramite</a></li>
-                <li><a class="treeview-item" href="modal_requisito.php"><i class="icon fa fa-circle-o"></i>Crear Requisito</a></li>
-                <li><a class="treeview-item" href="pasosplatilla.php"><i class="icon fa fa-circle-o"></i>Crear pasos</a></li>
+                <li><a class="treeview-item" href="iniciar_tramite.php"><i class="icon fa fa-play"></i>Iniciar Tramite</a></li>
+                <li><a class="treeview-item" href="tramites.php"><i class="icon fa fa-file-text-o"></i>Crear Tramite</a></li>
+                <li><a class="treeview-item" href="modal_requisito.php"><i class="icon fa fa-file-text-o"></i>Crear Requisito</a></li>
+                <li><a class="treeview-item" href="pasosplatilla.php"><i class="icon fa fa-file-text-o"></i>Crear pasos</a></li>
                 <?php  }?>
-                <li><a class="treeview-item" href="visualizador.php"><i class="icon fa fa-circle-o"></i>Estado de Tramite</a></li>
+                <li><a class="treeview-item" href="visualizador.php"><i class="icon fa fa-circle-o-notch"></i>Estado de Tramite</a></li>
             </ul>
         </li>
 <!--   fin tramites       -->
-          <?php if ($_SESSION['rol']=='administrador') {?>
-          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-laptop"></i><span class="app-menu__label">Estudios</span><i class="treeview-indicator fa fa-angle-right"></i></a>
-          <ul class="treeview-menu">
-
-              <li><a class="treeview-item" href="cursos_externos.php"><i class="icon fa fa-circle-o"></i>Cursos</a></li>
-              <li><a class="treeview-item" href="listar_cursoexterno.php"><i class="icon fa fa-circle-o"></i>Listar Cursos</a></li>
-              <li><a class="treeview-item" href="crear_carrera.php"><i class="icon fa fa-circle-o"></i>Crear Carreras</a></li>
-              <li><a class="treeview-item" href="listar_carrera.php"><i class="icon fa fa-circle-o"></i>Listar Carreras</a></li>
-
-          </ul>
-              <?php  }?>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-edit"></i><span class="app-menu__label">Pagina Informativa</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-info"></i><span class="app-menu__label">Pagina Informativa</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
               <li><a class="treeview-item" href="pagina_informativa.php"><i class="icon fa fa-circle-o"></i>Tramites Disponibles</a></li>
               <?php if ($_SESSION['rol']=='administrador') {?>
@@ -149,7 +162,7 @@ if($_SESSION['usuario']==""){
             <li><a class="treeview-item" href="form-notifications.html"><i class="icon fa fa-circle-o"></i> Form Notifications</a></li>
           </ul>
         </li>
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Tables</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+        <!--<li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-th-list"></i><span class="app-menu__label">Tables</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
             <li><a class="treeview-item" href="table-basic.html"><i class="icon fa fa-circle-o"></i> Basic Tables</a></li>
             <li><a class="treeview-item" href="table-personas.php"><i class="icon fa fa-circle-o"></i> Data Tables</a></li>
@@ -167,7 +180,7 @@ if($_SESSION['usuario']==""){
             <li><a class="treeview-item" href="page-error.html"><i class="icon fa fa-circle-o"></i> Error Page</a></li>
               <li><a class="treeview-item" href="visualizador.php"><i class="icon fa fa-circle-o"></i> visualizar</a></li>
           </ul>
-        </li>
+        </li>-->
       <?php  }?>
       </ul>
 

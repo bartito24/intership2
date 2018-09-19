@@ -1,32 +1,34 @@
 <?php
 include_once ('index.php');
-include_once ('../../modelo/mdl_privilegio.php');
-$objeto=new mdl_privilegio();
+include_once ('../../modelo/mdl_empresa.php');
+$objeto=new mdl_empresa();
 $datos=$objeto->listar();
 ?>
 
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-th-list"></i> Usuarios</h1>
-            <p>Listado de Carreras registrados en el sistema</p>
+            <h1><i class="fa fa-th-list"></i> Empresas</h1>
+            <p>Listado de Empresas registrados en el sistema</p>
         </div>
         <ul class="app-breadcrumb breadcrumb side">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-            <li class="breadcrumb-item">Usuarios</li>
-            <li class="breadcrumb-item active"><a href="#">Tabla Carreras</a></li>
+            <li class="breadcrumb-item">Empresas</li>
+            <li class="breadcrumb-item active"><a href="#">Tabla Empresas</a></li>
         </ul>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-                    <center><a class="btn btn-secondary" href="crear_privilegios.php">Crear Nueva Funcionalidad</a></center>
+                    <center><a class="btn btn-secondary" href="crear_empresa.php">Crear Empresa</a></center>
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>
-                            <th><b>Id funcionalidad</th>
-                            <th>nombre</th>
+                            
+                            <th>Nombre</th>
+                            <th>Direccion</th>
+                            <th>Telefono</th>
                             <th>Opciones</th>
                         </tr>
                         </thead>
@@ -34,12 +36,16 @@ $datos=$objeto->listar();
                         <?php
                         while($row=mysqli_fetch_assoc($datos)){
                             echo "<tr>";
-                            echo "<td>".$row['id_funcionalidad']."</td>";
-                            echo "<td>".$row['nombrefuncionalidad']."</td>";
-                            $id_carrera=$row['id_funcionalidad'];
-                            $nombre=$row['nombrefuncionalidad'];
+                            echo "<td hidden>".$row['id_empresa']."</td>";
+                            echo "<td>".$row['nombreempresa']."</td>";
+                            echo "<td>".$row['direccionempresa']."</td>";
+                            echo "<td>".$row['telefonoempresa']."</td>";
+                            $id_empresa=$row['id_empresa'];
+                            $nombre=$row['nombreempresa'];
+                            $direccion=$row['direccionempresa'];
+                            $telefono=$row['telefonoempresa'];
                             echo "<td><a class='btn btn-danger col-md-5' href='../../controlador/ctrl_agregarusuario.php?id_carrera=".$id_carrera."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
-                            <a class=' btn btn-success col-md-5' href='modificar_carrera.php?id_carrera=".$id_carrera."&nombre=".$nombre."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
+                            <a class=' btn btn-success col-md-5' href='modificar_empresa.php?id_empresa=".$id_empresa."&nombre=".$nombre."&direccion=".$direccion."&telefono=".$telefono."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                         }?>
                         </tbody>

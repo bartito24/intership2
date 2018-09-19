@@ -9,8 +9,8 @@
       <script src="js/sweetalert2.all.min.js"></script>
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="icon" type="image/png" href="../../logo/log2-01.png"  />
-    <title>Ingreso</title>
+      <link rel="icon" type="image/png" href="../../logo/apple-icon.png"/>
+    <title>Iniciar Sesión</title>
   </head>
   <body>
     <section class="material-half-bg">
@@ -18,11 +18,11 @@
     </section>
     <section class="login-content">
       <div class="logo">
-        <h1>Yam</h1>
+        <h1>Internship</h1>
       </div>
       <div class="login-box">
         <form class="login-form" action="../../enrutador/enr_login.php" method="post">
-          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>INGRESO</h3>
+          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>LOGIN</h3>
           <div class="form-group">
             <label class="control-label" for="nick">NOMBRE DE USUARIO</label>
             <input class="form-control" type="email" id="nick" name="nick" placeholder="Email" required autofocus autocomplete="off">
