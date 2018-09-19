@@ -206,14 +206,12 @@
                                                 <tr>
                                                     <td scope="col"><b>4.-INFORME FINAL </b>del docente con toda la información referente a los
                                                         pasantes.</td>
-
                                                 </tr>
                                                 </tbody>
                                             </table>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-
                                         </div>
                                         </form>
                                     </div>
