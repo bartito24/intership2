@@ -5,7 +5,7 @@ if($_SESSION['usuario']==""){
 }
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
   <head>
     <title>Control y Seguimiento</title>
     <link rel="icon" type="image/png" href="../../logo/apple-icon.png"  />
@@ -95,8 +95,8 @@ if($_SESSION['usuario']==""){
 
               <ul class="treeview-menu" >
                   <!--<li ><a class="treeview-item" href = "agregar-persona.php" ><i class="icon fa fa-circle-o" ></i > Crear Estudiante </a ></li >-->
-                  <li ><a class="treeview-item" href = "agregar-empleado.php" ><i class="icon fa fa-user-plus" ></i > Registrar</a ></li >
-                  <li ><a class="treeview-item" href = "table-personas.php" ><i class="icon fa fa-list" ></i > Listar Registros</a ></li >
+                  <li ><a class="treeview-item" href = "agregar-empleado.php" ><i class="icon fa fa-user-plus" ></i > Registrar Persona</a ></li >
+                  <li ><a class="treeview-item" href = "table-personas.php" ><i class="icon fa fa-list" ></i > Listar Personas</a ></li >
                   <!--<li ><a class="treeview-item" href = "agregar_usuario.php" ><i class="icon fa fa-circle-o" ></i > Agregar Cuenta </a ></li >-->
                   <li ><a class="treeview-item" href = "listar_usuario.php" ><i class="icon fa fa-list" ></i > Listar Usuarios </a ></li >
                   <li ><a class="treeview-item" href = "crear_privilegios.php" ><i class="icon fa fa-plus-square" ></i > Crear Privilegios </a ></li >

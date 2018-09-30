@@ -51,8 +51,7 @@ class ctrlUsuario
 				$this->obj_mod->set("rol", $n["rol"]);
 				$this->obj_mod->insertar_estudiante();
 			echo "<script> window.location.href='../admin/docs/agregar_usuario.php';</script>";
-		 	break;	
-		
+		 	break;
 		default:
 			# code...
 			break;

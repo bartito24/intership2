@@ -44,7 +44,7 @@ $datos=$objeto->listar();
                             $nombre=$row['nombreempresa'];
                             $direccion=$row['direccionempresa'];
                             $telefono=$row['telefonoempresa'];
-                            echo "<td><a class='btn btn-danger col-md-5' href='../../controlador/ctrl_agregarusuario.php?id_carrera=".$id_carrera."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                            echo "<td><a class='btn btn-danger col-md-5' href='../../controlador/ctrl_agregarusuario.php?id_carrera=".$id_empresa."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
                             <a class=' btn btn-success col-md-5' href='modificar_empresa.php?id_empresa=".$id_empresa."&nombre=".$nombre."&direccion=".$direccion."&telefono=".$telefono."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                         }?>

@@ -4,7 +4,7 @@
  * Author: Pratik Borsadiya
  * ================================*/
 @import url(https://fonts.googleapis.com/css?family=Lato:300,400,400i,700);
-@import url(https://fonts.googleapis.com/css?family=Niconne);
+/* @import url(https://fonts.googleapis.com/css?family=Niconne); */
 /*!
  * Bootstrap v4.1.1 (https://getbootstrap.com/)
  * Copyright 2011-2018 The Bootstrap Authors
@@ -178,7 +178,7 @@ a {
 
 a:hover {
   color: #962439;
-  text-decoration: underline;
+  text-decoration: none;
 }
 
 a:not([href]):not([tabindex]) {
@@ -14886,7 +14886,7 @@ be a descendant of the grid when it is being dragged.
 }
 
 .login-content .logo h1 {
-  font-size: 52px;
+  font-size: 62px;
   font-weight: 400;
 }
 

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,7 @@
     <!-- Main CSS-->
     <link rel="stylesheet" type="text/css" href="css/main.css">
       <script src="js/sweetalert2.all.min.js"></script>
+      <script src="../../js/validacion.js"></script>
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
       <link rel="icon" type="image/png" href="../../logo/apple-icon.png"/>
@@ -25,7 +26,7 @@
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>LOGIN</h3>
           <div class="form-group">
             <label class="control-label" for="nick">NOMBRE DE USUARIO</label>
-            <input class="form-control" type="email" id="nick" name="nick" placeholder="Email" required autofocus autocomplete="off">
+            <input class="form-control" type="email" id="nick" name="nick" placeholder="Email" onkeypress="return correo(event)" required autofocus autocomplete="off">
           </div>
           <div class="form-group">
             <label class="control-label" for="clave">CLAVE</label>
@@ -35,7 +36,7 @@
             <div class="utility">
               <div class="animated-checkbox">
                 <label>
-                  <input type="checkbox"><span class="label-text">Recordar Cuenta</span>
+                  <input type="checkbox" onclick="mostrarclave()"><span class="label-text">Mostrar Clave</span>
                 </label>
               </div>
               <p class="semibold-text mb-2"><a href="#" data-toggle="flip">Olvido la clave ?</a></p>
@@ -49,7 +50,7 @@
           <h3 class="login-head"><i class="fa fa-lg fa-fw fa-lock"></i>Olvido la clave ?</h3>
           <div class="form-group">
             <label class="control-label">CORREO</label>
-            <input class="form-control" type="text" name="correo" placeholder="Email" required>
+            <input class="form-control" type="email" name="correo" placeholder="Email" onkeypress="return correo(event)" required>
           </div>
           <div class="form-group btn-container">
             <button class="btn btn-primary btn-block"><i class="fa fa-unlock fa-lg fa-fw"></i>Enviar Correo</button>
@@ -77,7 +78,6 @@
       	$('.login-box').toggleClass('flipped');
       	return false;
       });
-
     </script>
   </body>
 </html>

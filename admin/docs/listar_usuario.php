@@ -37,7 +37,7 @@ $datos=$objeto->listar();
                             echo "<tr>";
                             echo "<td>".$row['id_usuario']."</td>";
                             echo "<td>".$row['usuario']."</td>";
-                            echo "<td>".$row['clave']."</td>";
+                            echo "<td>*******</td>";
                             echo "<td>".$row['persona_id_persona']."</td>";
                             $id_persona=$row['id_usuario'];
                             echo "<td><a class='btn btn-danger col-md-5' href='../../controlador/ctrl_agregarusuario.php?id_persona=".$id_persona."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>

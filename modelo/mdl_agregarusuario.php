@@ -72,7 +72,7 @@ class mdlusuario
 	}
 	public function listar()
 	{
-			$sql="select * from persona;";
+			$sql="select * from persona WHERE activo=1;";
 	return $this->obj_con->con_retorno($sql);
 	}
 
@@ -94,7 +94,7 @@ public function asignar($n,$i){
 		return $this->obj_con->con_retorno($sql);
 	}
 	public function eliminar($v){
-	    $sql="delete from persona WHERE id_persona=$v;";
+	    $sql="UPDATE persona SET activo=0 WHERE id_persona=$v;";
 	    $this->obj_con->sin_retorno($sql);
     }
 public function buscar_nombre_rol ()

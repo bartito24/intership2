@@ -1,22 +1,121 @@
-function letras(e)
+function sololetras(e)
 {
     var key=e.keyCode || e.which;
-    var tecla= String.fromCharCode(key).toLowerCase();
-    var letras="áéíóúabcdefghijklmnñopqrstuvwxyz";
-    var especiales = [8,37, 39, 46];
-    var tecla_especiales=false;
+    var teclado= String.fromCharCode(key).toLowerCase();
+    var letras=" abcdefghijklmnñopqrstuvwxyz";
+    var especiales = "8-37-38-46-164";
+    var teclado_especiales=false;
     for (var i in especiales)
     {
         if (key==especiales[i])
         {
-            tecla_especiales=false;
+            tecla_especiales=true;
             break;
         }
     }
-    if (letras.indexOf(tecla)== -1 && !tecla_especiales)
+    if (letras.indexOf(teclado)== -1 && !teclado_especiales)
+    {
         return false;
+    }
+
 }
 
+function dni(e)
+{
+    var key=e.keyCode || e.which;
+    var teclado= String.fromCharCode(key).toLowerCase();
+    var letras="abcdefghijklmnñopqrstuvwxyz123456789";
+    var especiales = "8-37-38-46-164";
+    var teclado_especiales=false;
+    for (var i in especiales)
+    {
+        if (key==especiales[i])
+        {
+            tecla_especiales=true;
+            break;
+        }
+    }
+    if (letras.indexOf(teclado)== -1 && !teclado_especiales)
+    {
+        return false;
+    }
+
+}
+
+function letras(e)
+{
+    var key=e.keyCode || e.which;
+    var teclado= String.fromCharCode(key).toLowerCase();
+    var letras="abcdefghijklmnñopqrstuvwxyz";
+    var especiales = "8-37-38-46-164";
+    var teclado_especiales=false;
+    for (var i in especiales)
+    {
+        if (key==especiales[i])
+        {
+            tecla_especiales=true;
+            break;
+        }
+    }
+    if (letras.indexOf(teclado)== -1 && !teclado_especiales)
+    {
+        return false;
+    }
+
+}
+
+function correo(e)
+{
+    var key=e.keyCode || e.which;
+    var teclado= String.fromCharCode(key).toLowerCase();
+    var letras="abcdefghijklmnñopqrstuvwxyz@.1234567890";
+    var especiales = "8-37-38-46-164";
+    var teclado_especiales=false;
+    for (var i in especiales)
+    {
+        if (key==especiales[i])
+        {
+            tecla_especiales=true;
+            break;
+        }
+    }
+    if (letras.indexOf(teclado)== -1 && !teclado_especiales)
+    {
+        return false;
+    }
+
+}
+
+function dirreccion(e)
+{
+    var key=e.keyCode || e.which;
+    var teclado= String.fromCharCode(key).toLowerCase();
+    var letras=" abcdefghijklmnñopqrstuvwxyz#.123456789";
+    var especiales = "8-37-38-46-164";
+    var teclado_especiales=false;
+    for (var i in especiales)
+    {
+        if (key==especiales[i])
+        {
+            tecla_especiales=true;
+            break;
+        }
+    }
+    if (letras.indexOf(teclado)== -1 && !teclado_especiales)
+    {
+        return false;
+    }
+
+}
+
+function mostrarclave() {
+    var x = document.getElementById("clave");
+    if (x.type === "password") {
+        x.type = "text";
+    } else {
+        x.type = "password";
+    }
+}
 /*function cad_nombre(){
 
     var texto=document.getElementById("nombre").value;
@@ -51,23 +150,6 @@ texto=texto.trim();
 
      // document.getElementById("nombre1").value = nCad;
 }*/
-/*function letras(e) {
-    key = e.keyCode || e.which;
-    tecla = String.fromCharCode(key).toLowerCase();
-    letras = " áéíóúabcdefghijklmnñopqrstuvwxyz";
-    especiales = [8, 37, 39, 46];
-
-    tecla_especial = false
-    for(var i in especiales) {
-        if(key == especiales[i]) {
-            tecla_especial = true;
-            break;
-        }
-    }
-
-    if(letras.indexOf(tecla) == -1 && !tecla_especial)
-        return false;
-}*/
 
 /*function validar(e) {
  if (e.target.value.trim() == "")
@@ -76,22 +158,22 @@ texto=texto.trim();
   alert("ingreso "+e.target.value.trim()+", es correcto!");
 }*/
 
-function numeros(e)
+function solonumeros(e)
 {
     key=e.keyCode || e.which;
     teclado= String.fromCharCode(key);
-    numero="0123456789";
+    numeros="0123456789-";
     especiales="8-37-38-46";
 
-    tecla_especiales=false;
+    teclado_especial=false;
     for (var i in especiales)
     {
         if (key==especiales[i])
         {
-            tecla_especiales=true;
+            teclado_especial=true;
         }
     }
-    if (numero.indexOf(teclado)==-1 && !tecla_especiales)
+    if (numeros.indexOf(teclado)==-1 && !teclado_especial)
     {
         return false;
     }

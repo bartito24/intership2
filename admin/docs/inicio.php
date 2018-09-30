@@ -28,7 +28,7 @@
             <div class="col-md-12">
                 <div class="tile">
                     <div class="tile-body">
-                        <center><h1 style="font-family: 'Kaushan Script';">Internship</h1></center>
+                        <center><h1 style="font-family: 'Niconne'; font-size: 70px;">Internship</h1></center>
                         <p>
                         <center><h2 style="font-family: sans-serif, Verdana, cursive;">Sistema de Control y Seguimiento de Pasantias</h2></center>
                         </p>

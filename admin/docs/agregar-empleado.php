@@ -34,13 +34,13 @@
                     <center><h3 class="tile-title">Registrar Persona</h3></center>
                     <div class="tile-body">
                         <form name="f1" action="../../enrutador/enr_agregarusuario.php" method="post" autocomplete="off" required>
-                            <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre: <b>*</b></label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return letras(event);"></div></div>
-                            <div class="form-group row"><label for="papellido" class="col-md-4 col-form-label text-md-right" >Primer Apellido: <b>*</b></label><div class="col-md-6"><input type="text" name="papellido" id="papellido" class="form-control" value="" required onkeypress="return letras(event);"></div></div>
+                            <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre: <b>*</b></label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return sololetras(event);" onpaste="return false"></div></div>
+                            <div class="form-group row"><label for="papellido" class="col-md-4 col-form-label text-md-right" >Primer Apellido: <b>*</b></label><div class="col-md-6"><input type="text" name="papellido" id="papellido" class="form-control" value="" required onkeypress="return sololetras(event);"></div></div>
                             <div class="form-group row"><label for="sapellido" class="col-md-4 col-form-label text-md-right" >Segundo Apellido: </label><div class="col-md-6"><input type="text" name="sapellido" id="sapellido" value="" required class="form-control" onkeypress="return letras(event);"></div></div>
-                            <div class="form-group row"><label for="ci" class="col-md-4 col-form-label text-md-right">DNI:  <b>*</b></label><div class="col-md-6"><input type="text" name="ci" id="ci" value="" required class="form-control"></div></div>
-                            <div class="form-group row"><label for="telefono" class="col-md-4 col-form-label text-md-right">Telefono: <b>*</b></label><div class="col-md-6"><input type="tel" name="telefono" id="telefono" class="form-control" value="" required onpaste="return false" onkeypress="return numeros(event);"></div></div>
-                            <div class="form-group row"><label for="direccion" class="col-md-4 col-form-label text-md-right">Direccion: <b>*</b></label><div class="col-md-6"><input type="text" name="direccion" id="direccion" value="" required class="form-control" ></div></div>
-                            <div class="form-group row"><label for="email" class="col-md-4 col-form-label text-md-right">Email: <b>*</b></label><div class="col-md-6"><input  type="email" name="email" id="email" value="" required class="form-control"></div></div>
+                            <div class="form-group row"><label for="ci" class="col-md-4 col-form-label text-md-right">DNI:  <b>*</b></label><div class="col-md-6"><input type="text" name="ci" id="ci" value="" onkeypress="return dni(event)" required class="form-control"></div></div>
+                            <div class="form-group row"><label for="telefono" class="col-md-4 col-form-label text-md-right">Telefono: <b>*</b></label><div class="col-md-6"><input type="tel" name="telefono" id="telefono" class="form-control" value="" required onpaste="return false" onkeypress="return solonumeros(event);"></div></div>
+                            <div class="form-group row"><label for="direccion" class="col-md-4 col-form-label text-md-right">Direccion: <b>*</b></label><div class="col-md-6"><input type="text" name="direccion" id="direccion" value="" onkeypress="return dirreccion(event)" required class="form-control" ></div></div>
+                            <div class="form-group row"><label for="email" class="col-md-4 col-form-label text-md-right">Email: <b>*</b></label><div class="col-md-6"><input  type="email" name="email" id="email" value="" onkeypress="return correo(event)" required class="form-control"></div></div>
                              <div class="form-group row"><label for="rol" class="col-md-4 col-form-label text-md-right">Rol: <b>*</b></label><div class="col-md-6">
                                              <select class="custom-select" name="rol" id="rol" onchange ="labores()">
                                                  <?php
@@ -54,16 +54,17 @@
 
                                <div id="pru" class="form-group row" style="display: none"><label for="cargo" class="col-md-4 col-form-label text-md-right">Cargo</label><div class="col-md-6">
                                              <select class="custom-select" name="cargo"  id="cargo">
-                                                <option>Secretaria</option>
-                                                <option>Responsable</option>
+                                                 <option>Jefe de Registros</option>
+                                                 <option>Jefe de Carrera</option>
+                                                 <option>Tutor</option>
                                              </select>
                                          </div>
                              </div>
 
 
                            <div class="form-group row" style="text-align:center"><div class="col-md-4">
-                                    <button type="submit" class="btn btn-outline-primary" name="Registrar">
-                                        <span class="glyphicon glyphicon-log-in"></span> registrar
+                                    <button type="submit" class="btn btn-outline-primary" name="registrar">
+                                        <span class="glyphicon glyphicon-log-in"></span> Registrar
                                     </button>
                                 </div>
                                 <div class ="col-md-4"><button type="reset" class="btn btn-dark">

@@ -22,7 +22,7 @@ class mdl_rol
 	public function insertar()
 	{
 		$sql="insert into rol (nombrerol)
-		value ('$this->nombre')";
+		value ('$this->nombre',1)";
 		$this->conec->sin_retorno($sql);
 	}
 
