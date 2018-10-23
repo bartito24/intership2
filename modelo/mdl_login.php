@@ -52,7 +52,6 @@ public function listar(){
   join rol r on persona.rol = r.id_rol
   join privilegios p on r.id_rol = p.rol_id_rol
   join funcionalidad f on p.funcionalidad_id_funcionalidad = f.id_funcionalidad
-  join empleado e on persona.id_persona = e.persona_id_persona
   where u.usuario='$u'";
            $log= $this->obj_con->con_retorno($sql);
            $da=mysqli_fetch_assoc($log);
@@ -65,7 +64,6 @@ public function listar(){
             $_SESSION['telefono']=$da['telefono'];
             $_SESSION['direccion']=$da['direccion'];
             $_SESSION['privilegio']=$da['id_funcionalidad'];
-            $_SESSION['cargo']=$da['cargo'];
             return $contenido;
         }
 
