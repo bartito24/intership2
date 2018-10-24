@@ -38,7 +38,12 @@ class mdl_empresa
 
     public function listar()
     {
-        $sql = "SELECT * FROM empresa ORDER BY id_empresa ;";
+        $sql = "SELECT * FROM empresa where activoempresa=1 ORDER BY id_empresa;";
         return $this->obj_con->con_retorno($sql);
+    }
+    public function Eliminar($id)
+    {
+        $sql = "UPDATE empresa SET activoempresa=0 WHERE id_empresa=$id ";
+        $this->obj_con->sin_retorno($sql);
     }
 }

@@ -20,4 +20,7 @@ class ctrl_estudio{
         $this->obj_mod->set("id_Carrera" ,$p['id_carrera']);
         $this->obj_mod->modificar();
     }
+    public function eliminar($id){
+        $this->obj_mod->eliminar($id);
+    }
 }

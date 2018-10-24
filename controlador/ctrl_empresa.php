@@ -23,4 +23,7 @@ class ctrl_empresa{
         $this->obj_mod->set("id_empresa" ,$p['id_empresa']);
         $this->obj_mod->modificar();
     }
+public function eliminar($id){
+    $this->obj_mod->Eliminar($id);
+}
 }

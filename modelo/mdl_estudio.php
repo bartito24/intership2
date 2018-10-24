@@ -36,7 +36,12 @@ class mdl_estudio
 
     public function listar()
     {
-        $sql = "SELECT * FROM carrera ORDER BY id_Carrera ;";
+        $sql = "SELECT * FROM carrera where activocarrera=1 order BY id_Carrera ;";
         return $this->obj_con->con_retorno($sql);
+    }
+    public function eliminar($id)
+    {
+        $sql = "UPDATE carrera SET activocarrera=0 where id_Carrera=$id;";
+        $this->obj_con->sin_retorno($sql);
     }
 }

@@ -25,6 +25,7 @@ $datos=$objeto->listar();
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>
+                            <th>Num</th>
                             <th>Nombre</th>
                             <th>Modalidad</th>
                             <th>Opciones</th>
@@ -32,16 +33,19 @@ $datos=$objeto->listar();
                         </thead>
                         <tbody>
                         <?php
+                        $num=1;
                         while($row=mysqli_fetch_assoc($datos)){
                             echo "<tr>";
+                            echo "<td>$num</td>";
                             echo "<td hidden>".$row['id_carrera']."</td>";
                             echo "<td>".$row['nombrecarrera']."</td>";
                             echo "<td>".$row['modalidad']."</td>";
                             $id_carrera=$row['id_carrera'];
                             $nombre=$row['nombrecarrera'];
-                            echo "<td><a class='btn btn-danger col-md-5' href='../../controlador/ctrl_agregarusuario.php?id_carrera=".$id_carrera."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                            echo "<td><a class='btn btn-danger col-md-5' href='../../enrutador/enr_estudio.php?id_carrera=".$id_carrera."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
                             <a class=' btn btn-success col-md-5' href='modificar_carrera.php?id_carrera=".$id_carrera."&nombre=".$nombre."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
+                            $num+=1;
                         }?>
                         </tbody>
                     </table>
