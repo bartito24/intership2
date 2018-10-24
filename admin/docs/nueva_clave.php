@@ -9,7 +9,9 @@
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="../../logo/log2-01.png"  />
-    <title>Ingreso</title>
+      <script src="js/sweetalert2.all.min.js"></script>
+      <script src="../../js/validacion.js"></script>
+    <title>Internship</title>
   </head>
   <body>
     <section class="material-half-bg">
@@ -17,18 +19,18 @@
     </section>
     <section class="login-content">
       <div class="logo">
-        <h1>Yam</h1>
+        <h1>Internship</h1>
       </div>
       <div class="login-box">
         <form class="login-form" action="./php/prov.php" method="post">
           <h3 class="login-head"><i class="fa fa-lg "></i>Nueva contraseña</h3>
           <div class="form-group">
             <label class="control-label" for="nick">CLAVE</label>
-            <input class="form-control" type="password" id="clave" name="clave" placeholder="Contraseña" required autofocus autocomplete="off">
+            <input class="form-control" type="password" id="clave" name="clave" placeholder="Contraseña" onkeypress="return dni(event)" maxlength="8" required autofocus autocomplete="off">
           </div>
           <div class="form-group">
             <label class="control-label" for="clave">CLAVE</label>
-            <input class="form-control" type="password" id="clave2" name="clave2" placeholder="Contraseña" required autofocus >
+            <input class="form-control" type="password" id="clave2" name="clave2" placeholder="Contraseña" onkeypress="return dni(event)" maxlength="8" required autofocus >
           </div>
           
           <div class="form-group btn-container">

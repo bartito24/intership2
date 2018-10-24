@@ -44,9 +44,10 @@
                                 <input type="hidden" value="<?php echo($id_per) ?>" name="id_per">
                                 <input type="hidden" value="<?php echo($rol) ?>" name="rol">
                                    <div class="form-group row"><label for="nick" class="col-md-4 col-form-label text-md-right">Email</label><div class="col-md-6"><input readonly type="email" name="nick" id="nick" class="form-control" value="<?php echo($email) ?>" required autofocus></div></div>
-                                   <div class="form-group row"><label for="1clave" class="col-md-4 col-form-label text-md-right" >Clave</label><div class="col-md-6"><input type="password" name="1clave" id="1clave" class="form-control" required></div></div>
-                                   <div class="form-group row"><label for="2clave" class="col-md-4 col-form-label text-md-right" >Confirmar Clave</label><div class="col-md-6"><input type="password" name="2clave" id="2clave" class="form-control" required  onblur="validar_clave();"></div>
-                                   <div id="msj_verificacion" style="display: none"> La clave no coincide...</div>
+                                   <div class="form-group row"><label for="1clave" class="col-md-4 col-form-label text-md-right" >Clave</label><div class="col-md-6"><input type="password" name="1clave" id="1clave" class="form-control" onkeypress="return dni(event)" maxlength="8" required></div></div>
+                                   <div class="form-group row"><label for="2clave" class="col-md-4 col-form-label text-md-right" >Confirmar Clave</label><div class="col-md-6"><input type="password" name="2clave" id="2clave" class="form-control" onkeypress="return dni(event)" maxlength="8" required  onblur="validar_clave();"></div>
+                                       <br><br><br>
+                                   <div class="col-md-6" id="msj_verificacion" style="display: none; color: firebrick"> La clave no coincide...</div>
                                   </div>
                                </div>
                                <div class="card-footer">

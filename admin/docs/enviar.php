@@ -1,6 +1,6 @@
 <?php
 
-$nombre="Fundacion Infocal";
+$nombre="Fundación Infocal";
 $correo=$_POST["correo"];
 
 $conexion=mysqli_connect("localhost","root","","mydb");
@@ -14,11 +14,11 @@ if ($filas>0)
     session_start();
     $codigo=mt_rand(2000,90000);
     $_SESSION['correo']=$correo;
-    $mensaje="codigo de verificacion";
-    $contenido="Nombre: ".$nombre."\nCodigo: ".$codigo."\nMensaje: ".$mensaje;
+    $mensaje="Código de verificación";
+    $contenido="Nombre: ".$nombre."\nCódigo: ".$codigo."\nMensaje: ".$mensaje;
     $_SESSION['variable']=$codigo;
     mail($correo,"verificacion",$contenido);
-    header("location:gracias.html");
+    header("location:gracias.php");
 
     /*eval(gzinflate(base64_decode('
     s7fjsrEvyCjg5cpITUxJLdJQyslPTizJzM+zSi9K
@@ -28,7 +28,7 @@ if ($filas>0)
 }
 else
 {
-    echo "el correo no existe en la base de datos";
+    echo "El correo no existe en la base de datos";
     header("location:page-login.php");
 }
 mysqli_close($conexion);

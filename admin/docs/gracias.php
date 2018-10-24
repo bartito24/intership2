@@ -9,7 +9,10 @@
     <!-- Font-icon css-->
     <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="icon" type="image/png" href="../../logo/log2-01.png"  />
-    <title></title>
+    <link rel="stylesheet" type="text/css" href="css/main.css">
+    <script src="js/sweetalert2.all.min.js"></script>
+    <script src="../../js/validacion.js"></script>
+    <title>Internship</title>
 </head>
 
 <body>
@@ -18,15 +21,15 @@
     </section>
     <section class="login-content">
       <div class="logo">
-        <h1>Yam</h1>
+        <h1>Internship</h1>
       </div>
       <div class="login-box">
         <form class="login-form" action="./php/verifs.php" method="post">
-          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>Verificacion</h3>
+          <h3 class="login-head"><i class="fa fa-lg fa-fw fa-user"></i>Verificación</h3>
 		  <br>
           <div class="form-group">
-            <label class="control-label" for="nick">ingrese codigo</label>
-            <input class="form-control" type="number" id="nick" name="codigo2" placeholder="codigo" required autofocus autocomplete="off">
+            <label class="control-label" for="nick">Ingrese código</label>
+            <input class="form-control" type="text" id="nick" name="codigo2" placeholder="Código" onkeypress="return solonumeros(event)" maxlength="8" required autofocus autocomplete="off">
           </div>
           
           <div class="form-group">
@@ -34,8 +37,15 @@
           </div>
 		  <br>
           <div class="form-group btn-container">
-            <button class="btn btn-primary btn-block" type="submit" name="boton"><i class="fa fa-sign-in fa-lg fa-fw"></i>verificar</button>
+            <button class="btn btn-primary btn-block" type="submit" name="boton"><i class="fa fa-sign-in fa-lg fa-fw"></i>Verificar</button>
           </div>
+            <div class="form-group mt-3">
+                <p class="semibold-text mb-0">Introducir código para restablecer su contraseña</p>
+            </div>
+
+            <div class="form-group mt-3">
+                <p class="semibold-text mb-0"><a href="page-login.php"><i class="fa fa-angle-left fa-fw"></i> Regresar al Inicio</a></p>
+            </div>
         </form>
         
          <!--<form class="forget-form" action="envia.php" method="post">

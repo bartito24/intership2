@@ -30,7 +30,7 @@
           </div>
           <div class="form-group">
             <label class="control-label" for="clave">CLAVE</label>
-            <input class="form-control" type="password" id="clave" name="clave" placeholder="Password" required autofocus >
+            <input class="form-control" type="password" id="clave" name="clave" placeholder="Password" onkeypress="return dni(event)" maxlength="8" required autofocus >
           </div>
           <div class="form-group">
             <div class="utility">
