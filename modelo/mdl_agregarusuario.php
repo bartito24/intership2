@@ -52,7 +52,7 @@ class mdlusuario
             $num = mysqli_fetch_assoc($numeropersona);
             $sql2 = "insert into empleado(persona_id_persona,cargo,activoempleado) values('$num[id_persona]','administrador','1')";
             $this->obj_con->sin_retorno($sql2);
-            echo "<script> window.location.href='../admin/docs/agregar_usuario.php';</script>";
+            echo "<script> window.location.href='../admin/docs/imprimir_cuenta.php?c=$num[id_persona]';</script>";
         }
     }
 	public function insertar_personal()
@@ -71,10 +71,9 @@ class mdlusuario
 		$num=mysqli_fetch_assoc($numeropersona);
 		$sql2="insert into empleado(persona_id_persona,cargo,activoempleado) values('$num[id_persona]','$this->cargo','1')";
 		$this->obj_con->sin_retorno($sql2);
-		echo "<script> window.location.href='../admin/docs/agregar_usuario.php';</script>";
+            echo "<script> window.location.href='../admin/docs/imprimir_cuenta.php?c=$num[id_persona]';</script>";
 	}
 	}
-
 		public function insertar_estudiante()
         {
             $sql = "select * from persona where email='$this->email'";
@@ -91,7 +90,7 @@ class mdlusuario
                 $num = mysqli_fetch_assoc($numeropersona);
                 $sql2 = "insert into estudiante(activoestudiante,persona_id_persona) values('1','$num[id_persona]')";
                 $this->obj_con->sin_retorno($sql2);
-                echo "<script> window.location.href='../admin/docs/index.php';</script>";
+                echo "<script> window.location.href='../admin/docs/imprimir_cuenta.php?c=$num[id_persona]';</script>";
             }
         }
 	public function listar()
@@ -136,6 +135,10 @@ where email='$correo'";
         $da=mysqli_fetch_assoc($iddatos);
         $sql="insert into estudia values ($idcarrera,$da[id_estudiante],$da[id_persona])";
         $this->obj_con->sin_retorno($sql);
+    }
+    public function buscar_persona($cor){
+        $sql="select * from persona where activo=1 and id_persona=$cor";
+        return $this->obj_con->con_retorno($sql);
     }
 }
 
