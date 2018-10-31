@@ -32,12 +32,6 @@
                         <p>
                         <center><h2 style="font-family: sans-serif, Verdana, cursive;">Sistema de Control y Seguimiento de Pasantías</h2></center>
                         </p>
-                        <?php
-                            if($_SESSION['cargo']=='Tutor')
-                            {
-                                echo"<p> Tutor</p>";
-                            }
-                        ?>
                     </div>
                 </div>
             </div>

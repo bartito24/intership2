@@ -44,7 +44,7 @@ $datos=$obj->listar();
                                 <button class="btn btn-outline-secondary" type="submit" name="agregar">Registrar</button>
                             </div>
                             <div class="col-md-3">
-                                <a class="btn btn-danger" href="listar_roles.php">Cancelar</a>
+                                <a class="btn btn-danger" href="index.php">Cancelar</a>
                             </div>
                         </div>
                     </form>
