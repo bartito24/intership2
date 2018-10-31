@@ -12,7 +12,7 @@ $da=$obju->listar();
         </div>
         <ul class="app-breadcrumb breadcrumb side">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-            <li class="breadcrumb-item active"><a href="listar_roles.php">asignacion Roles</a></li>
+            <li class="breadcrumb-item active"><a href="vst_rol1.php">asignacion Roles</a></li>
             <li class="breadcrumb-item active"><a href="modal-modificar-rol.php">Asignacion Roles</a></li>
         </ul>
     </div>
@@ -41,7 +41,7 @@ $da=$obju->listar();
                                 <button class="btn btn-success" type="submit" name="asignar">Asignar</button>
                             </div>
                             <div class="col-md-3">
-                                <a class="btn btn-danger" href="listar_roles.php">Cancelar</a>
+                                <a class="btn btn-danger" href="vst_rol1.php">Cancelar</a>
                             </div>
                         </div>
                     </form>

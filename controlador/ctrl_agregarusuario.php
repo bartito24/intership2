@@ -1,9 +1,6 @@
 <?php
 require("../modelo/mdl_agregarusuario.php");
-if($_GET['id_persona']){
-    $borrar=new ctrlUsuario();
-    $borrar->eliminar($_GET['id_persona']);
-}
+
 class ctrlUsuario
 {  public $obj_mod;
 	
@@ -24,7 +21,6 @@ class ctrlUsuario
 				$this->obj_mod->set("email", $n["email"]);
 				$this->obj_mod->set("rol", $n["rol"]);
 				$this->obj_mod->insertar_administrador();
-			echo "<script> window.location.href='../admin/docs/agregar_usuario.php';</script>";
 			break;
 		case '2':
 				$this->obj_mod->set("nombre", $n["nombre"]);
@@ -37,7 +33,7 @@ class ctrlUsuario
 				$this->obj_mod->set("rol", $n["rol"]);
 				$this->obj_mod->set("cargo", $n["cargo"]);
 				$this->obj_mod->insertar_personal();
-			echo "<script> window.location.href='../admin/docs/agregar_usuario.php';</script>";
+
 		 	break;
 
 		case '3':
@@ -50,8 +46,9 @@ class ctrlUsuario
 				$this->obj_mod->set("email", $n["email"]);
 				$this->obj_mod->set("rol", $n["rol"]);
 				$this->obj_mod->insertar_estudiante();
-			echo "<script> window.location.href='../admin/docs/agregar_usuario.php';</script>";
-		 	break;
+				$this->obj_mod->agregar_estudio($n['email'],$n['carrera']);
+		 	break;	
+		
 		default:
 			# code...
 			break;
@@ -92,5 +89,6 @@ public function eliminar ($v){
 	$this->obj_mod->set("rol", $p["rol"]);
 	return $this->obj_mod->modificar();
 	        echo "<script> window.location.href='../vista/vst_roles_usuarios.php;</script>";
+
 	}
 }

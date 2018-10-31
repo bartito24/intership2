@@ -10,7 +10,7 @@ class conexion{
 	$this->host="localhost";
 	$this->user="root";
 	$this->clave="";
-	$this->db="mydb";
+	$this->db="inter";
 	$this->con=mysqli_connect($this->host, $this->user,$this->clave);// cadena de conexion
 	mysqli_query($this->con, 'SET NAMES UTF-8');
 

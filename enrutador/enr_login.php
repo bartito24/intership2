@@ -4,7 +4,7 @@ $obj=new ctrl_login();
 
 if (isset($_POST['agregar'])){
 $obj->insertar($_POST);
-    echo "<script> window.location.href='../admin/docs/listar_usuario.php';</script>";
+    echo "<script> window.location.href='../admin/docs/index.php';</script>";
 
 
 }

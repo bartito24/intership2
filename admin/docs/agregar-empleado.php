@@ -11,74 +11,93 @@
     include_once('../../modelo/mdl_rol.php');
     $obj=new mdl_rol();
     $datos=$obj->listar();
+    $datos_carrera=$obj->listar_carrera();
     ?>
 </head>
 <body>
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-edit"></i> Usuarios</h1>
+            <h1><i class="fa fa-edit"></i>Usuario</h1>
             <p>Registro Personas</p>
         </div>
         <ul class="app-breadcrumb breadcrumb">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-            <li class="breadcrumb-item">Usuarios</li>
+            <li class="breadcrumb-item">Usuario</li>
             <li class="breadcrumb-item"><a href="#">Registro Persona</a></li>
         </ul>
     </div>
     <div class="container">
-
         <div class="row">
             <div class="col-md-12">
-                <div class="tile">
-                    <center><h3 class="tile-title">Registrar Persona</h3></center>
-                    <div class="tile-body">
-                        <form name="f1" action="../../enrutador/enr_agregarusuario.php" method="post" autocomplete="off" required>
-                            <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre: <b>*</b></label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return sololetras(event);" maxlength="8" onpaste="return false"></div></div>
-                            <div class="form-group row"><label for="papellido" class="col-md-4 col-form-label text-md-right" >Primer Apellido: <b>*</b></label><div class="col-md-6"><input type="text" name="papellido" id="papellido" class="form-control" value="" required onkeypress="return sololetras(event);" maxlength="8"></div></div>
-                            <div class="form-group row"><label for="sapellido" class="col-md-4 col-form-label text-md-right" >Segundo Apellido: </label><div class="col-md-6"><input type="text" name="sapellido" id="sapellido" value="" required class="form-control" onkeypress="return letras(event);" maxlength="8"></div></div>
-                            <div class="form-group row"><label for="ci" class="col-md-4 col-form-label text-md-right">DNI:  <b>*</b></label><div class="col-md-6"><input type="text" name="ci" id="ci" value="" onkeypress="return dni(event)" maxlength="10" required class="form-control"></div></div>
-                            <div class="form-group row"><label for="telefono" class="col-md-4 col-form-label text-md-right">Telefono: <b>*</b></label><div class="col-md-6"><input type="tel" name="telefono" id="telefono" class="form-control" value="" maxlength="8" required onpaste="return false" onkeypress="return solonumeros(event);"></div></div>
-                            <div class="form-group row"><label for="direccion" class="col-md-4 col-form-label text-md-right">Direccion: <b>*</b></label><div class="col-md-6"><input type="text" name="direccion" id="direccion" value="" onkeypress="return dirreccion(event)" required class="form-control" ></div></div>
-                            <div class="form-group row"><label for="email" class="col-md-4 col-form-label text-md-right">Email: <b>*</b></label><div class="col-md-6"><input  type="email" name="email" id="email" value="" onkeypress="return correo(event)" required class="form-control"></div></div>
-                             <div class="form-group row"><label for="rol" class="col-md-4 col-form-label text-md-right">Rol: <b>*</b></label><div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        <center><h3>Registrar Persona</h3></center>
+                    </div>
+                    <form name="f1" action="../../enrutador/enr_agregarusuario.php" method="post" autocomplete="off">
+                    <div class="card-body">
+                            <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre</label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return letras(event);"></div></div>
+                            <div class="form-group row"><label for="papellido" class="col-md-4 col-form-label text-md-right" >Primer apellido</label><div class="col-md-6"><input type="text" name="papellido" id="papellido" class="form-control" value="" required onkeypress="return letras(event);"></div></div>
+                            <div class="form-group row"><label for="sapellido" class="col-md-4 col-form-label text-md-right" >Segundo apellido</label><div class="col-md-6"><input type="text" name="sapellido" id="sapellido" value="" class="form-control" onkeypress="return letras(event);"></div></div>
+                            <div class="form-group row"><label for="ci" class="col-md-4 col-form-label text-md-right">DNI</label><div class="col-md-6"><input type="text" name="ci" id="ci" value="" required class="form-control" onkeypress="return validar(event);" ></div></div>
+                            <div class="form-group row"><label for="telefono" class="col-md-4 col-form-label text-md-right">Telefono</label><div class="col-md-6"><input value="" type="tel" name="telefono" id="telefono" class="form-control"  required onpaste="return false" onkeypress="return numeros(event);"></div></div>
+                            <div class="form-group row"><label for="direccion" class="col-md-4 col-form-label text-md-right">Direccion</label><div class="col-md-6"><input type="text" name="direccion" id="direccion" value="" required class="form-control" ></div></div>
+                            <div class="form-group row"><label for="email" class="col-md-4 col-form-label text-md-right">Email</label><div class="col-md-6"><input  type="email" name="email" id="email" value="" required class="form-control"></div></div>
+                             <div class="form-group row"><label for="rol" class="col-md-4 col-form-label text-md-right">Rol</label><div class="col-md-6">
                                              <select class="custom-select" name="rol" id="rol" onchange ="labores()">
+                                                 <option value="" disabled selected hidden>Nada Seleccionado</option>
                                                  <?php
-                                                     while ($row=mysqli_fetch_assoc($datos)){
-                                                         echo "<option value='$row[id_rol]'>".$row['nombrerol']."</option>";
-                                                      }
+                                                 while ($row=mysqli_fetch_assoc($datos)){
+                                                     echo "<option value='$row[id_rol]'>".$row['nombrerol']."</option>";
+                                                  }
                                                  ?>
                                              </select>
                                          </div>
                              </div>
-
                                <div id="pru" class="form-group row" style="display: none"><label for="cargo" class="col-md-4 col-form-label text-md-right">Cargo</label><div class="col-md-6">
-                                       <select class="custom-select" name="cargo"  id="cargo">
-                                         <option>Jefe de Registros</option>
-                                         <option>Jefe de Carrera</option>
-                                         <option>Tutor</option>
-                                       </select>
+                                             <select class="custom-select" name="cargo"  id="cargo">
+                                                 <option value="" disabled selected hidden>Nada Seleccionado</option>
+                                                <option>Tutor</option>
+                                                <option>Jefe de Carrera</option>
+                                                 <option>Jefe de Registros Inscripciones</option>
+                                                 <option>Encargado Empresa</option>
+                                             </select>
+                                         </div>
                                </div>
-                             </div>
 
-                           <div class="form-group row" style="text-align:center"><div class="col-md-4">
-                                    <button type="submit" class="btn btn-outline-primary" name="registrar">
-                                        <span class="glyphicon glyphicon-log-in"></span> Registrar
+                                <div id="prue" class="form-group row" style="display: none"><label for="carrera" class="col-md-4 col-form-label text-md-right">Carrera</label><div class="col-md-6">
+                                        <select class="custom-select" name="carrera"  id="carrera">
+                                            <option value="" disabled selected hidden>Nada Seleccionado</option>
+                                            <?php
+                                            while ($row=mysqli_fetch_assoc($datos_carrera)){
+                                                echo "<option value='$row[id_Carrera]'>".$row['nombrecarrera']."</option>";
+                                            }
+                                            ?>
+                                        </select>
+                                    </div>
+                                </div>
+                    </div>
+                        <div class="card-footer">
+                           <div class="form-group row" style="text-align:center">
+                               <div class="col-md-4">
+                                    <button type="submit" class="btn btn-info" name="registrar">
+                                        <span class="glyphicon glyphicon-log-in"></span> registrar
                                     </button>
                                 </div>
-                                <div class ="col-md-4"><button type="reset" class="btn btn-dark">
+                                <div class ="col-md-4"><button type="reset" class="btn btn-info">
                                         <span class="glyphicon glyphicon-pencil"></span>Limpiar
-                                    </button></div>
+                                    </button>
+                                </div>
                                 <div class ="col-md-4"><a class="btn btn-danger" href="menu.php">Cancelar
-                                    </a></div>
+                                    </a>
+                                </div>
                             </div>
-                        </form>
-                    </div>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div>
     </div>
-
 </main>
 </body>
 </html>
@@ -93,5 +112,23 @@
         {
             var cargo=document.getElementById("pru").style.display='none';
         }
+         if (lab==3) {
+             var carrera=document.getElementById("prue").style.display='';}
+         else
+         {
+             var carrera=document.getElementById("prue").style.display='none';
+         }
     }
 </script>
+<?php
+if(@$_SESSION['error']=="emailduplicado"){
+    echo "<script>swal({
+  type: 'error',
+  title: 'Lo Sentimos',
+  text: 'Error El Correo ya esta en uso',
+  footer: 'Verifique que el correo es valido'
+})</script>";
+    @$_SESSION['error']="";
+}
+
+?>

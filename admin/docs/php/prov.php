@@ -22,11 +22,11 @@ if ($clave==$clave2)
     else
     {
         echo "error al modificar los campos";
-        header("location:../nueva_clave.php");
+        header("location:../prov.html");
     }
 }
 else
 {
-header("location:../nueva_clave.php");
+header("location:../prov.html");
 }
 ?>

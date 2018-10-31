@@ -7,11 +7,11 @@ session_start();
 	$codigo=$_SESSION['variable'];
 	if($codigo==$vari)
 	{
-		header("location:../nueva_clave.php");
+		header("location:../prov.html");
         
 	}
 	else
 	{
-        header("location:../gracias.php");
+        header("location:../gracias.html");
 	}
 	?>

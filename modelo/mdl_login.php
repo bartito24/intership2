@@ -1,5 +1,6 @@
 <?php
-session_start();
+@session_start();
+$_SESSION['mensaje']=0;
 require("conexion.php");
 class mdl_login{
 	public $usuario;
@@ -30,11 +31,6 @@ class mdl_login{
   join rol r on p.rol = r.id_rol join privilegios p2 on r.id_rol = p2.rol_id_rol join funcionalidad f
     on p2.funcionalidad_id_funcionalidad = f.id_funcionalidad where u.usuario='$this->usuario'";
         $r=$this->obj_con->con_retorno($sql2);
-
-
-
-
-
 	}
 public function listar(){
         $sql="select * from usuario ORDER BY id_usuario ;";
@@ -48,11 +44,10 @@ public function listar(){
         $sql="select * from usuario WHERE usuario ='$u' AND clave='$c';";
         if($contenido=$this->obj_con->con_retorno($sql)){
             $sql="select * from persona
-  join usuario u on persona.id_persona = u.persona_id_persona
-  join rol r on persona.rol = r.id_rol
+join usuario u on persona.id_persona = u.persona_id_persona
+  join rol r on persona.rol_id_rol = r.id_rol
   join privilegios p on r.id_rol = p.rol_id_rol
-  join funcionalidad f on p.funcionalidad_id_funcionalidad = f.id_funcionalidad
-  where u.usuario='$u'";
+join funcionalidad f on p.funcionalidad_id_funcionalidad = f.id_funcionalidad where usuario='$u'";
            $log= $this->obj_con->con_retorno($sql);
            $da=mysqli_fetch_assoc($log);
             $_SESSION['usuario']=$da['usuario'];
@@ -64,8 +59,21 @@ public function listar(){
             $_SESSION['telefono']=$da['telefono'];
             $_SESSION['direccion']=$da['direccion'];
             $_SESSION['privilegio']=$da['id_funcionalidad'];
+            $_SESSION['id_persona']=$da['id_persona'];
+            $_SESSION['bienvenida']=0;
+
             return $contenido;
         }
+    }
 
+    public function agregar_cuenta($correo)
+    {
+        $sql="select id_usuario,id_persona,id_rol from persona join usuario u on persona.id_persona = u.persona_id_persona
+        join rol r on persona.rol_id_rol = r.id_rol
+        where email='$correo'";
+        $idcuenta=$this->obj_con->con_retorno($sql);
+        $dat=mysqli_fetch_assoc($idcuenta);
+        $sql="insert into cuenta values ($dat[id_usuario],$dat[id_persona],$dat[id_rol])";
+        $this->obj_con->sin_retorno($sql);
     }
 }

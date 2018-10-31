@@ -57,6 +57,10 @@ class mdl_rol
 		</script>
 	 <?php
 	}
+	public function listar_carrera(){
+	    $sql="select * from carrera where activocarrera=1";
+	    return $this->conec->con_retorno($sql);
+    }
 
 }
 

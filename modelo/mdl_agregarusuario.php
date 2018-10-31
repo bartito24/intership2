@@ -1,4 +1,5 @@
-<?php 
+<?php
+@session_start();
 require("conexion.php");
 class mdlusuario
 {
@@ -15,7 +16,7 @@ class mdlusuario
 	public $cargo;
 	function __construct()
 	{
-		
+
 	$this->id_persona=0;
 	$this->nombre="";
 	$this->papellido="";
@@ -36,43 +37,66 @@ class mdlusuario
 	}
 
 	public function insertar_administrador()
-	{
-		//echo $this->nombre;
-		$sql="insert into persona(nombre,papellido,sapellido,ci,telefono,direccion, email,rol,activo) values('$this->nombre','$this->papellido','$this->sapellido', '$this->ci','$this->telefono','$this->direccion', '$this->email', '$this->rol',1);";
-		$this->obj_con->sin_retorno($sql);
-		$sql1="select * from persona where ci='$this->ci'";
-		$numeropersona=$this->obj_con->con_retorno($sql1);
-		$num=mysqli_fetch_assoc($numeropersona);
-		$sql2="insert into empleado(persona_id_persona,cargo,activoempleado) values('$num[id_persona]',administrador,'1')";
-		$this->obj_con->sin_retorno($sql2);
-	}
-
+    {
+        $sql = "select * from persona where email='$this->email'";
+        $resp=$this->obj_con->con_retorno($sql);
+        if ($resp=="") {
+            $_SESSION['error'] = "emailduplicado";
+            echo "<script> window.location.href='../admin/docs/agregar-empleado.php';</script>";
+        } else {
+            //echo $this->nombre;
+            $sql = "insert into persona(nombre,papellido,sapellido,ci,telefono,direccion, email,rol_id_rol,activo) values('$this->nombre','$this->papellido','$this->sapellido', '$this->ci','$this->telefono','$this->direccion', '$this->email', '$this->rol',1);";
+            $this->obj_con->sin_retorno($sql);
+            $sql1 = "select * from persona where ci='$this->ci'";
+            $numeropersona = $this->obj_con->con_retorno($sql1);
+            $num = mysqli_fetch_assoc($numeropersona);
+            $sql2 = "insert into empleado(persona_id_persona,cargo,activoempleado) values('$num[id_persona]','administrador','1')";
+            $this->obj_con->sin_retorno($sql2);
+            echo "<script> window.location.href='../admin/docs/agregar_usuario.php';</script>";
+        }
+    }
 	public function insertar_personal()
 	{
+        $sql = "select * from persona where email='$this->email'";
+        $resp=$this->obj_con->con_retorno($sql);
+        if ($resp=="") {
+            $_SESSION['error'] = "emailduplicado";
+            echo "<script> window.location.href='../admin/docs/agregar-empleado.php';</script>";
+        } else {
 		//echo $this->nombre;
-		$sql="insert into persona(nombre,papellido,sapellido,ci,telefono,direccion, email,rol,activo) values('$this->nombre','$this->papellido','$this->sapellido', '$this->ci','$this->telefono','$this->direccion', '$this->email','$this->rol',1);";
+		$sql="insert into persona(nombre,papellido,sapellido,ci,telefono,direccion, email,rol_id_rol,activo) values('$this->nombre','$this->papellido','$this->sapellido', '$this->ci','$this->telefono','$this->direccion', '$this->email','$this->rol',1);";
 		$this->obj_con->sin_retorno($sql);
 		$sql1="select * from persona where ci='$this->ci'";
 		$numeropersona=$this->obj_con->con_retorno($sql1);
 		$num=mysqli_fetch_assoc($numeropersona);
 		$sql2="insert into empleado(persona_id_persona,cargo,activoempleado) values('$num[id_persona]','$this->cargo','1')";
 		$this->obj_con->sin_retorno($sql2);
+		echo "<script> window.location.href='../admin/docs/agregar_usuario.php';</script>";
+	}
 	}
 
 		public function insertar_estudiante()
-	{
-		//echo $this->nombre;
-		$sql="insert into persona(nombre,papellido,sapellido,ci,telefono,direccion, email,rol,activo) values('$this->nombre','$this->papellido','$this->sapellido', '$this->ci','$this->telefono','$this->direccion', '$this->email','$this->rol',1);";
-		$this->obj_con->sin_retorno($sql);
-		$sql1="select * from persona where ci='$this->ci'";
-		$numeropersona=$this->obj_con->con_retorno($sql1);
-		$num=mysqli_fetch_assoc($numeropersona);
-		$sql2="insert into estudiante(activoestudiante,persona_id_persona) values('1','$num[id_persona]')";
-		$this->obj_con->sin_retorno($sql2);
-	}
+        {
+            $sql = "select * from persona where email='$this->email'";
+            $resp = $this->obj_con->con_retorno($sql);
+            if ($resp == "") {
+                $_SESSION['error'] = "emailduplicado";
+                echo "<script> window.location.href='../admin/docs/agregar-empleado.php';</script>";
+            } else {
+                //echo $this->nombre;
+                $sql = "insert into persona(nombre,papellido,sapellido,ci,telefono,direccion, email,rol_id_rol,activo) values('$this->nombre','$this->papellido','$this->sapellido', '$this->ci','$this->telefono','$this->direccion', '$this->email','$this->rol',1);";
+                $this->obj_con->sin_retorno($sql);
+                $sql1 = "select * from persona where ci='$this->ci'";
+                $numeropersona = $this->obj_con->con_retorno($sql1);
+                $num = mysqli_fetch_assoc($numeropersona);
+                $sql2 = "insert into estudiante(activoestudiante,persona_id_persona) values('1','$num[id_persona]')";
+                $this->obj_con->sin_retorno($sql2);
+                echo "<script> window.location.href='../admin/docs/index.php';</script>";
+            }
+        }
 	public function listar()
 	{
-			$sql="select * from persona WHERE activo=1;";
+			$sql="select * from persona;";
 	return $this->obj_con->con_retorno($sql);
 	}
 
@@ -80,12 +104,14 @@ class mdlusuario
 		$sql="select * from persona where id_persona='$this->id_persona';";
 		return $this->obj_con->con_retorno($sql);
 	}
+
+
 	public  function buscar_rol($no){
 	    $sql="select id_rol from rol WHERE nombrerol='$no'";
         return $this->obj_con->con_retorno($sql);
     }
 public function asignar($n,$i){
-	    $sql="update persona set rol='$n' WHERE id_persona='$i';";
+	    $sql="update persona set rol_id_rol='$n' WHERE id_persona='$i';";
     $this->obj_con->sin_retorno($sql);
 }
 	public function modificar(){
@@ -94,7 +120,7 @@ public function asignar($n,$i){
 		return $this->obj_con->con_retorno($sql);
 	}
 	public function eliminar($v){
-	    $sql="UPDATE persona SET activo=0 WHERE id_persona=$v;";
+	    $sql="delete from persona WHERE id_persona=$v;";
 	    $this->obj_con->sin_retorno($sql);
     }
 public function buscar_nombre_rol ()
@@ -102,7 +128,15 @@ public function buscar_nombre_rol ()
 		$sql="select * from rol where nombrerol='estudio'";
 		 $this->obj_con->con_retorno($sql);
 	}
+    public function agregar_estudio($correo,$idcarrera)
+    {
+        $sql="select id_estudiante,id_persona from persona join estudiante e on persona.id_persona = e.persona_id_persona
+where email='$correo'";
+        $iddatos=$this->obj_con->con_retorno($sql);
+        $da=mysqli_fetch_assoc($iddatos);
+        $sql="insert into estudia values ($idcarrera,$da[id_estudiante],$da[id_persona])";
+        $this->obj_con->sin_retorno($sql);
+    }
 }
-
 
 ?>

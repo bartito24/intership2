@@ -1,3 +1,4 @@
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -15,6 +16,15 @@
     $email=$em['email'];
     $id_per=$em['id_persona'];
     $rol=$em['rol'];
+    $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
+    $password = "";
+    //Reconstruimos la contraseña segun la longitud que se quiera
+    for($i=0;$i<8;$i++) {
+        //obtenemos un caracter aleatorio escogido de la cadena de caracteres
+        $password .= substr($str,rand(0,62),1);
+    }
+    //Mostramos la contraseña generad
+    $_SESSION['password']=$password;
     ?>
 </head>
 <body>
@@ -44,10 +54,9 @@
                                 <input type="hidden" value="<?php echo($id_per) ?>" name="id_per">
                                 <input type="hidden" value="<?php echo($rol) ?>" name="rol">
                                    <div class="form-group row"><label for="nick" class="col-md-4 col-form-label text-md-right">Email</label><div class="col-md-6"><input readonly type="email" name="nick" id="nick" class="form-control" value="<?php echo($email) ?>" required autofocus></div></div>
-                                   <div class="form-group row"><label for="1clave" class="col-md-4 col-form-label text-md-right" >Clave</label><div class="col-md-6"><input type="password" name="1clave" id="1clave" class="form-control" onkeypress="return dni(event)" maxlength="8" required></div></div>
-                                   <div class="form-group row"><label for="2clave" class="col-md-4 col-form-label text-md-right" >Confirmar Clave</label><div class="col-md-6"><input type="password" name="2clave" id="2clave" class="form-control" onkeypress="return dni(event)" maxlength="8" required  onblur="validar_clave();"></div>
-                                       <br><br><br>
-                                   <div class="col-md-6" id="msj_verificacion" style="display: none; color: firebrick"> La clave no coincide...</div>
+                                   <div class="form-group row"><label for="1clave" class="col-md-4 col-form-label text-md-right" >Clave</label><div class="col-md-6"><input value="<?php echo $password?>" readonly type="text" name="1clave" id="1clave" class="form-control" required maxlength="16" minlength="8" onkeypress="return validar(event);"></div></div>
+                                   <div class="form-group row"><label for="2clave" class="col-md-4 col-form-label text-md-right" >Confirmar Clave</label><div class="col-md-6"><input value="<?php echo $password?>" readonly type="text" name="2clave" id="2clave" class="form-control" required maxlength="16" minlength="8"  onblur="validar_clave();" onkeypress="return validar(event);"></div>
+                                   <div id="msj_verificacion" style="display: none"> La clave no coincide...</div>
                                   </div>
                                </div>
                                <div class="card-footer">
