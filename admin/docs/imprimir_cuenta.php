@@ -9,10 +9,8 @@
  $apmaterno=$em['sapellido'];
  $ci=$em['ci'];
  $telefono=$em['telefono'];
- $tramite=$em['nombretramite'];
  $direccion=$em['direccion'];
  $id_per=$em['id_persona'];
- $rol=$em['rol'];
  $str = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890";
  $password = "";
  //Reconstruimos la contraseña segun la longitud que se quiera
@@ -60,7 +58,6 @@
                                         <div class="form-group row"><label for="ci" class="col-md-4 col-form-label text-md-right">ci</label><div class="col-md-6"><input readonly type="text" name="ci" id="ci" class="form-control" value="<?php echo($ci) ?>" required autofocus></div></div>
                                         <div class="form-group row"><label for="telefono" class="col-md-4 col-form-label text-md-right">telefono</label><div class="col-md-6"><input readonly type="text" name="telefono" id="telefono" class="form-control" value="<?php echo($telefono) ?>" required autofocus></div></div>
                                         <div class="form-group row"><label for="direccion" class="col-md-4 col-form-label text-md-right">direccion</label><div class="col-md-6"><input readonly type="text" name="direccion" id="direccion" class="form-control" value="<?php echo($direccion) ?>" required autofocus></div></div>
-                                        <div class="form-group row"><label for="tramite" class="col-md-4 col-form-label text-md-right">Tramite en Curso</label><div class="col-md-6"><input readonly type="text" name="tramite" id="tramite" class="form-control" value="<?php echo($tramite) ?>" required autofocus></div></div>
                                         <div class="form-group row"><label for="nick" class="col-md-4 col-form-label text-md-right">Email</label><div class="col-md-6"><input readonly type="email" name="nick" id="nick" class="form-control" value="<?php echo($email) ?>" required autofocus></div></div>
                                         <div class="form-group row"><label for="1clave" class="col-md-4 col-form-label text-md-right" >Clave</label><div class="col-md-6"><input value="<?php echo $_SESSION['password']?>" readonly type="text" name="1clave" id="1clave" class="form-control" required maxlength="16" minlength="8"></div></div>
                               </div>
