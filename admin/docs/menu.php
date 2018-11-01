@@ -135,15 +135,20 @@ if($_SESSION['usuario']==""){
           <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-database"></i><span class="app-menu__label">Pasantias</span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
                 <!--    Jefe de registros   -->
-                <?php echo $_SESSION['cargo'] ?>
+                <?php if( $_SESSION['cargo']=="Jefe de Registros Inscripciones" || $_SESSION['rol']=="administrador"){ ?>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Iniciar Pasantia</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Subir Nota</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificaion de Pasantia</a></li>
+                <?php } ?>
                 <!--    Jefe de carrera   -->
+                <?php if( $_SESSION['cargo']=="Jefe de Carrera" || $_SESSION['rol']=="administrador"){ ?>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
+                <?php } ?>
                 <!--    tutor   -->
+                <?php if( $_SESSION['cargo']=="Tutor" || $_SESSION['rol']=="administrador"){ ?>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Registrar Visita</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Ver pasantes asignados</a></li>
+                <?php } ?>
                </ul>
           </li>
 <!--   fin tramites       -->
