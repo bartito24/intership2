@@ -4,7 +4,7 @@
     <div class="app-title">
         <div>
             <h1><i class="fa fa-th-list"></i>Estudia</h1>
-            <p>Modificacion de Carrera</p>
+            <p>Modificación de Carrera</p>
         </div>
         <ul class="app-breadcrumb breadcrumb side">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
@@ -19,13 +19,13 @@
                 <div class="tile-body">
                     <form action="../../enrutador/enr_estudio.php" method="post">
                         <div class="form-group row">
-                            <div class="col-md-2"><label class="col-form-label text-md-right" for="nombre">nombre</label></div>
+                            <div class="col-md-2"><label class="col-form-label text-md-right" for="nombre">Nombre</label></div>
                             <div class="col-md-10"><input class="form-control" type="text" name="nombre" id="nombre" value="<?php echo $_GET['nombre'];?>"></div>
 
                         </div>
                         <div class="form-group row">
-                            <div class="col-md-2"><label class="col-form-label text-md-right" for="id_carrera">id carrera</label></div>
-                            <div class="col-md-10"><input class="form-control" type="text" name="id_carrera" id="id_carrera" value="<?php echo $_GET['id_carrera'];?>"></div>
+                            <div class="col-md-2"><label class="col-form-label text-md-right" hidden for="id_carrera">id carrera</label></div>
+                            <div class="col-md-10"><input class="form-control" type="text" hidden name="id_carrera" id="id_carrera" value="<?php echo $_GET['id_carrera'];?>"></div>
                         </div>
                         <div class="tile-footer row">
                             <div class="col-md-3">

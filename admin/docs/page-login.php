@@ -13,7 +13,7 @@
         <!-- Font-icon css-->
         <link rel="stylesheet" type="text/css"
               href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-        <link rel="icon" type="image/png" href="../../logo/log2-01.png"/>
+        <link rel="icon" type="image/png" href="../../logo/apple-icon.png"/>
         <title>Ingreso</title>
     </head>
     <body>
@@ -22,7 +22,7 @@
     </section>
     <section class="login-content">
         <div class="logo">
-            <h1>Yam</h1>
+            <h1>Internship</h1>
         </div>
         <div class="login-box">
             <form class="login-form" action="../../enrutador/enr_login.php" method="post">

@@ -11,7 +11,7 @@ class mdl_empresa
     function __construct()
     {
 
-        $this->id_usuario = 0;
+        $this->id_empresa = 0;
         $this->nombre = "";
         $this->direccion = "";
         $this->telefono = 0;
@@ -25,13 +25,13 @@ class mdl_empresa
 
     public function insertar()
     {
-        $sql = "INSERT INTO empresa (nombreempresa,direccionempresa,telefonoempresa,activoempresa) VALUE ('$this->nombre','$this->direccion','$this->telefono',1);";
+        $sql = "INSERT INTO empresa (nombreempresa,direccionempresa,telefono,activoempresa) VALUE ('$this->nombre','$this->direccion','$this->telefono',1);";
         $this->obj_con->sin_retorno($sql);
 
     }
     public function modificar()
     {
-        $sql="UPDATE empresa SET nombreempresa='$this->nombre' where id_empresa='$this->id_empresa';";
+        $sql="UPDATE empresa SET nombreempresa='$this->nombre', direccionempresa='$this->direccion', telefono='$this->telefono' where id_empresa='$this->id_empresa';";
         $this->obj_con->sin_retorno($sql);
 
     }

@@ -10,10 +10,10 @@ class ctrl_empresa{
     }
 
     public function insertar($p){
+        print_r($p);
         $this->obj_mod->set("nombre" ,$p['nombre']);
         $this->obj_mod->set("direccion" ,$p['direccion']);
         $this->obj_mod->set("telefono" ,$p['telefono']);
-        $this->obj_mod->set("activo" ,$p['activo']);
         $this->obj_mod->insertar();
     }
     public function modificar($p){

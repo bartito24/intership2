@@ -9,8 +9,7 @@ class mdl_estudio
 
     function __construct()
     {
-
-        $this->id_usuario = 0;
+        $this->id_Carrera = 0;
         $this->nombre = "";
         $this->modalidad = "";
         $this->obj_con = new conexion();

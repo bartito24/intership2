@@ -6,7 +6,7 @@ session_start();
     $clave2=$_POST["clave2"];
 if ($clave==$clave2)
 {
-   $conexion=mysqli_connect("localhost","root","","mydb");
+   $conexion=mysqli_connect("localhost","root","","inter");
     $consulta="SELECT * FROM persona,usuario WHERE email='$correo'";
     $resultado=mysqli_query($conexion,$consulta);
 

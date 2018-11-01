@@ -69,8 +69,6 @@
                                         </div>
                                        <!-- <div class ="col-md-4"><a class="btn btn-danger col-md-12" href="agregar_usuario.php" >Cancelar</a></div>-->
                                     </div>
-
-
                         </form>
                     </div>
                 </div>

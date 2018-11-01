@@ -134,20 +134,13 @@ if($_SESSION['usuario']==""){
 <!--    Tramites      -->
           <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-database"></i><span class="app-menu__label">Pasantias</span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
-                <?php if ($_SESSION['rol']=='administrador') {?>
-                <li><a class="treeview-item" href="iniciar_tramite.php"><i class="icon fa fa-play"></i>Iniciar Tramite</a></li>
-                <li><a class="treeview-item" href="tramites.php"><i class="icon fa fa-file-text-o"></i>Crear Tramite</a></li>
-                <li><a class="treeview-item" href="modal_requisito.php"><i class="icon fa fa-file-text-o"></i>Crear Requisito</a></li>
-                <li><a class="treeview-item" href="pasosplatilla.php"><i class="icon fa fa-file-text-o"></i>Crear pasos</a></li>
-                <?php  }?>
-                <li><a class="treeview-item" href="visualizador.php"><i class="icon fa fa-circle-o-notch"></i>Estado de Tramite</a></li>
+
             </ul>
         </li>
 <!--   fin tramites       -->
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-info"></i><span class="app-menu__label">Informacion</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-              <li><a class="treeview-item" href="pagina_informativa.php"><i class="icon fa fa-circle-o"></i>Requisitos Estudiante</a></li>
-              <li><a class="treeview-item" href="pagina_info.php"><i class="icon fa fa-circle-o"></i>Requisitos Tutor</a></li>
+
               <?php if ($_SESSION['rol']=='administrador') {?>
             <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> Crear Requisitos</a></li>
             <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> Listar Requisitos</a></li>
@@ -174,7 +167,10 @@ if($_SESSION['usuario']==""){
               <li><a class="treeview-item" href="visualizador.php"><i class="icon fa fa-circle-o"></i> visualizar</a></li>
           </ul>
         </li>-->
+
       <?php  }?>
+          <li><a class="treeview-item" href="pagina_informativa.php"><i class="icon fa fa-circle-o"></i>Requisitos Estudiante</a></li>
+          <li><a class="treeview-item" href="pagina_info.php"><i class="icon fa fa-circle-o"></i>Requisitos Tutor</a></li>
       </ul>
 
     </aside>

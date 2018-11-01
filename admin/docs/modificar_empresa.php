@@ -31,8 +31,8 @@
                             <div class="col-md-10"><input class="form-control" type="text" name="telefono" id="telefono" value="<?php echo $_GET['telefono'];?>"></div>
                         </div>
                         <div class="form-group row">
-                            <div class="col-md-2"><label class="col-form-label text-md-right" for="id_empresa">Id empresa:</label></div>
-                            <div class="col-md-10"><input class="form-control" type="text" name="id_empresa" id="id_empresa" value="<?php echo $_GET['id_empresa'];?>"></div>
+                            <div class="col-md-2"><label class="col-form-label text-md-right" hidden for="id_empresa">Id empresa:</label></div>
+                            <div class="col-md-10"><input class="form-control" type="text" hidden name="id_empresa" id="id_empresa" value="<?php echo $_GET['id_empresa'];?>"></div>
                         </div>
                         <div class="tile-footer row">
                             <div class="col-md-3">

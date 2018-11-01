@@ -1,4 +1,3 @@
-
 <html>
 <head>
     <meta charset="UTF-8">
@@ -9,6 +8,10 @@
     <link rel="stylesheet" href="css/main.css">
     <script type="text/javascript" src="../../js/validacion.js"></script>
     <?php include_once('menu.php');
+    include_once ('../../modelo/conexion.php');
+    $obj=new conexion();
+    $sql= "select * from empleado where activoempleado=1";
+    $datos_empresa=$obj->con_retorno($sql);
     ?>
 </head>
 <body>
@@ -35,7 +38,18 @@
                             <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre:</label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
                             <div class="form-group row"><label for="direccion" class="col-md-4 col-form-label text-md-right">Direccion:</label><div class="col-md-6"><input type="text" name="direccion" id="direccion" class="form-control" value="" required></div></div>
                             <div class="form-group row"><label for="telefono" class="col-md-4 col-form-label text-md-right">Telefono:</label><div class="col-md-6"><input type="text" name="telefono" id="telefono" class="form-control" value="" required autofocus onkeypress="return solonumeros(event);"></div></div>
-
+                            <div class="form-group row"><label for="encargado" class="col-md-4 col-form-label text-md-right">Supervisor:</label>
+                                <div class="col-md-6">
+                                    <select class="custom-select">
+                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
+                                        <?php
+                                        while ($row=mysqli_fetch_assoc($datos_empresa)){
+                                            echo "<option value='$row[id_empleado]'>".$row['cargo']."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="registrar">
                                         <span class="glyphicon glyphicon-log-in"></span> Registrar

@@ -41,11 +41,11 @@ $datos=$objeto->listar();
                             echo "<td hidden>".$row['id_empresa']."</td>";
                             echo "<td>".$row['nombreempresa']."</td>";
                             echo "<td>".$row['direccionempresa']."</td>";
-                            echo "<td>".$row['telefonoempresa']."</td>";
+                            echo "<td>".$row['telefono']."</td>";
                             $id_empresa=$row['id_empresa'];
                             $nombre=$row['nombreempresa'];
                             $direccion=$row['direccionempresa'];
-                            $telefono=$row['telefonoempresa'];
+                            $telefono=$row['telefono'];
                             $num+=1;
                             echo "<td><a class='btn btn-danger col-md-5' href='../../enrutador/enr_empresa.php?id_carrera=".$id_empresa."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
                             <a class=' btn btn-success col-md-5' href='modificar_empresa.php?id_empresa=".$id_empresa."&nombre=".$nombre."&direccion=".$direccion."&telefono=".$telefono."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";

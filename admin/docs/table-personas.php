@@ -46,7 +46,7 @@ $datos=$objeto->listar();
                     echo "<td>".$row['telefono']."</td>";
                     echo "<td>".$row['direccion']."</td>";
                     echo "<td>".$row['email']."</td>";
-                    echo "<td>".$row['rol']."</td>";
+                    echo "<td>".$row['rol_id_rol']."</td>";
                     $id_persona=$row['id_persona'];
                     $nombre=$row['nombre'];
                     $papellido=$row['papellido'];
