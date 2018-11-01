@@ -44,10 +44,11 @@ public function listar(){
         $sql="select * from usuario WHERE usuario ='$u' AND clave='$c';";
         if($contenido=$this->obj_con->con_retorno($sql)){
             $sql="select * from persona
-join usuario u on persona.id_persona = u.persona_id_persona
+  join usuario u on persona.id_persona = u.persona_id_persona
   join rol r on persona.rol_id_rol = r.id_rol
   join privilegios p on r.id_rol = p.rol_id_rol
-join funcionalidad f on p.funcionalidad_id_funcionalidad = f.id_funcionalidad where usuario='$u'";
+  join funcionalidad f on p.funcionalidad_id_funcionalidad = f.id_funcionalidad
+ left join empleado e on persona.id_persona = e.persona_id_persona where usuario='$u'";
            $log= $this->obj_con->con_retorno($sql);
            $da=mysqli_fetch_assoc($log);
             $_SESSION['usuario']=$da['usuario'];
@@ -61,6 +62,8 @@ join funcionalidad f on p.funcionalidad_id_funcionalidad = f.id_funcionalidad wh
             $_SESSION['privilegio']=$da['id_funcionalidad'];
             $_SESSION['id_persona']=$da['id_persona'];
             $_SESSION['bienvenida']=0;
+            $_SESSION['cargo']=$da['cargo'];
+
 
             return $contenido;
         }

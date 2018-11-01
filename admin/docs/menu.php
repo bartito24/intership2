@@ -134,9 +134,18 @@ if($_SESSION['usuario']==""){
 <!--    Tramites      -->
           <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-database"></i><span class="app-menu__label">Pasantias</span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
-
-            </ul>
-        </li>
+                <!--    Jefe de registros   -->
+                <?php echo $_SESSION['cargo'] ?>
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Iniciar Pasantia</a></li>
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Subir Nota</a></li>
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificaion de Pasantia</a></li>
+                <!--    Jefe de carrera   -->
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
+                <!--    tutor   -->
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Registrar Visita</a></li>
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Ver pasantes asignados</a></li>
+               </ul>
+          </li>
 <!--   fin tramites       -->
         <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-info"></i><span class="app-menu__label">Informacion</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
