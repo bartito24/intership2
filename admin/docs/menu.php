@@ -139,9 +139,9 @@ if($_SESSION['usuario']==""){
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Iniciar Pasantia</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Subir Nota</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificaion de Pasantia</a></li>
-                <!--    Jefe de carrera   -->
-                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
-                <!--    tutor   -->
+                <!--  Jefe de carrera   -->
+                <li><a class="treeview-item" href="visitas.php"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
+                <!--  tutor  -->
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Registrar Visita</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Ver pasantes asignados</a></li>
                </ul>
