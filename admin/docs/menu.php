@@ -139,11 +139,9 @@ if($_SESSION['usuario']==""){
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Iniciar Pasantia</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Subir Nota</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificaion de Pasantia</a></li>
-<<<<<<< HEAD
                 <!--  Jefe de carrera   -->
                 <li><a class="treeview-item" href="visitas.php"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
                 <!--  tutor  -->
-=======
                 <?php } ?>
                 <!--    Jefe de carrera   -->
                 <?php if( $_SESSION['cargo']=="Jefe de Carrera" || $_SESSION['rol']=="administrador"){ ?>
@@ -151,7 +149,6 @@ if($_SESSION['usuario']==""){
                 <?php } ?>
                 <!--    tutor   -->
                 <?php if( $_SESSION['cargo']=="Tutor" || $_SESSION['rol']=="administrador"){ ?>
->>>>>>> cda9cf208f1fb59b24f57a06b71d03629289ae11
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Registrar Visita</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Ver pasantes asignados</a></li>
                 <?php } ?>
