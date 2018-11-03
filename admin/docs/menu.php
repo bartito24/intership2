@@ -136,15 +136,12 @@ if($_SESSION['usuario']==""){
             <ul class="treeview-menu">
                 <!--    Jefe de registros   -->
                 <?php if( $_SESSION['cargo']=="Jefe de Registros Inscripciones" || $_SESSION['rol']=="administrador"){ ?>
-<<<<<<< HEAD
                 <li><a class="treeview-item" href="pasantia.php"><i class="icon fa fa-circle-o"></i>Iniciar Pasantía</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Subir Nota</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificación de Pasantía</a></li>
-=======
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Iniciar Pasantia</a></li>
                 <li><a class="treeview-item" href="subir_nota.php"><i class="icon fa fa-circle-o"></i>Subir Nota</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificaion de Pasantia</a></li>
->>>>>>> caa5522a27aba1368e2a4a39fcc5c0aa9d39c092
                 <!--  Jefe de carrera   -->
                 <li><a class="treeview-item" href="visitas.php"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
                 <!--  tutor  -->

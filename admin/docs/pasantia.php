@@ -32,12 +32,24 @@
         <div class="row">
             <div class="col-md-6">
                 <div class="tile">
-                    <center><h3 class="tile-title">Nueva Empresa</h3></center>
+                    <center><h3 class="tile-title">Nueva Pasantía</h3></center>
                     <div class="tile-body">
                         <form name="f1" action="../../enrutador/enr_empresa.php" method="post" autocomplete="off" required>
-                            <div class="form-group row"><label for="nombre" class="col-md-4 col-form-label text-md-right">Nombre:</label><div class="col-md-6"><input type="text" name="nombre" id="nombre" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
-                            <div class="form-group row"><label for="direccion" class="col-md-4 col-form-label text-md-right">Direccion:</label><div class="col-md-6"><input type="text" name="direccion" id="direccion" class="form-control" value="" required></div></div>
-                            <div class="form-group row"><label for="telefono" class="col-md-4 col-form-label text-md-right">Telefono:</label><div class="col-md-6"><input type="text" name="telefono" id="telefono" class="form-control" value="" required autofocus onkeypress="return solonumeros(event);"></div></div>
+                            <div class="form-group row"><label for="numpasantia" class="col-md-4 col-form-label text-md-right">Numero de Pasantía:</label>
+                                <div class="col-md-6">
+                                    <select class="custom-select">
+                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
+                                        <option value="1">Pasantía 1</option>
+                                        <option value="2">Pasantía 2</option>
+                                        <option value="3">Pasantía 3</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row"><label for="fechainicio" class="col-md-4 col-form-label text-md-right">Fecha Inicio:</label><div class="col-md-6"><input type="date" name="fechainicio" id="fechainicio" class="form-control" value="" required autofocus></div></div>
+                            <div class="form-group row" hidden><label for="fechafin" class="col-md-4 col-form-label text-md-right">Fecha Fin:</label><div class="col-md-6"><input type="date" name="fechafin" id="fechafin" class="form-control" value="" required autofocus></div></div>
+                            <div class="form-group row" hidden><label for="gestion" class="col-md-4 col-form-label text-md-right">Gestion:</label><div class="col-md-6"><input type="text" name="gestion" id="gestion" class="form-control" value="" required></div></div>
+                            <div class="form-group row"><label for="anexo" class="col-md-4 col-form-label text-md-right">Anexo:</label><div class="col-md-6"><input type="text" name="anexo" id="anexo" class="form-control" value="" required autofocus onkeypress="return solonumeros(event);"></div></div>
+                            <div class="form-group row"><label for="estado" class="col-md-4 col-form-label text-md-right">Estado:</label><div class="col-md-6"><input type="text" name="estado" id="telefono" class="form-control" value="" required autofocus onkeypress="return solonumeros(event);"></div></div>
                             <div class="form-group row"><label for="encargado" class="col-md-4 col-form-label text-md-right">Supervisor:</label>
                                 <div class="col-md-6">
                                     <select class="custom-select">
