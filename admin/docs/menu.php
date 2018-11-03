@@ -136,9 +136,15 @@ if($_SESSION['usuario']==""){
             <ul class="treeview-menu">
                 <!--    Jefe de registros   -->
                 <?php if( $_SESSION['cargo']=="Jefe de Registros Inscripciones" || $_SESSION['rol']=="administrador"){ ?>
+<<<<<<< HEAD
                 <li><a class="treeview-item" href="pasantia.php"><i class="icon fa fa-circle-o"></i>Iniciar Pasantía</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Subir Nota</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificación de Pasantía</a></li>
+=======
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Iniciar Pasantia</a></li>
+                <li><a class="treeview-item" href="subir_nota.php"><i class="icon fa fa-circle-o"></i>Subir Nota</a></li>
+                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificaion de Pasantia</a></li>
+>>>>>>> caa5522a27aba1368e2a4a39fcc5c0aa9d39c092
                 <!--  Jefe de carrera   -->
                 <li><a class="treeview-item" href="visitas.php"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
                 <!--  tutor  -->
@@ -155,12 +161,14 @@ if($_SESSION['usuario']==""){
                </ul>
           </li>
 <!--   fin tramites       -->
-        <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-info"></i><span class="app-menu__label">Informacion</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+            <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-info"></i><span class="app-menu__label">Informacion</span><i class="treeview-indicator fa fa-angle-right"></i></a>
           <ul class="treeview-menu">
-
+          <li><a class="treeview-item" href="requisitos.php"><i class="icon fa fa-circle-o"></i>Crear Requisito</a></li>
+          <li><a class="treeview-item" href="listar_requisito.php"><i class="icon fa fa-circle-o"></i>listar Requisito</a></li>
+              <li><a class="treeview-item" href="pagina_informativa.php"><i class="icon fa fa-circle-o"></i>Requisitos Estudiante</a></li>
+              <li><a class="treeview-item" href="pagina_info.php"><i class="icon fa fa-circle-o"></i>Requisitos Tutor</a></li>
               <?php if ($_SESSION['rol']=='administrador') {?>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> Crear Requisitos</a></li>
-            <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i> Listar Requisitos</a></li>
+            
             <!--<li><a class="treeview-item" href="form-samples.html"><i class="icon fa fa-circle-o"></i> Form Samples</a></li>
             <li><a class="treeview-item" href="form-notifications.html"><i class="icon fa fa-circle-o"></i> Form Notifications</a></li>-->
           </ul>
@@ -186,8 +194,7 @@ if($_SESSION['usuario']==""){
         </li>-->
 
       <?php  }?>
-          <li><a class="treeview-item" href="pagina_informativa.php"><i class="icon fa fa-circle-o"></i>Requisitos Estudiante</a></li>
-          <li><a class="treeview-item" href="pagina_info.php"><i class="icon fa fa-circle-o"></i>Requisitos Tutor</a></li>
+          
       </ul>
 
     </aside>
