@@ -11,7 +11,9 @@
     include_once ('../../modelo/conexion.php');
     $obj=new conexion();
     $sql= "select * from empleado where activoempleado=1";
-    $datos_empresa=$obj->con_retorno($sql);
+    $sql2="select * from empresa where activoempresa=1";
+    $datos_empleado=$obj->con_retorno($sql);
+    $datos_empresa=$obj->con_retorno($sql2);
     ?>
 </head>
 <body>
@@ -49,14 +51,26 @@
                             <div class="form-group row" hidden><label for="fechafin" class="col-md-4 col-form-label text-md-right">Fecha Fin:</label><div class="col-md-6"><input type="date" name="fechafin" id="fechafin" class="form-control" value="" required autofocus></div></div>
                             <div class="form-group row" hidden><label for="gestion" class="col-md-4 col-form-label text-md-right">Gestion:</label><div class="col-md-6"><input type="text" name="gestion" id="gestion" class="form-control" value="" required></div></div>
                             <div class="form-group row"><label for="anexo" class="col-md-4 col-form-label text-md-right">Anexo:</label><div class="col-md-6"><input type="text" name="anexo" id="anexo" class="form-control" value="" required autofocus onkeypress="return solonumeros(event);"></div></div>
-                            <div class="form-group row"><label for="estado" class="col-md-4 col-form-label text-md-right">Estado:</label><div class="col-md-6"><input type="text" name="estado" id="telefono" class="form-control" value="" required autofocus onkeypress="return solonumeros(event);"></div></div>
-                            <div class="form-group row"><label for="encargado" class="col-md-4 col-form-label text-md-right">Supervisor:</label>
+                            <div class="form-group row"><label for="estado" class="col-md-4 col-form-label text-md-right">Estado:</label><div class="col-md-6"><input type="text" name="estado" id="estado" class="form-control" value="" required autofocus onkeypress="return solonumeros(event);"></div></div>
+                            <div class="form-group row"><label for="tutor" class="col-md-4 col-form-label text-md-right">Tutor:</label>
                                 <div class="col-md-6">
                                     <select class="custom-select">
                                         <option value="" disabled selected hidden>Nada Seleccionado</option>
                                         <?php
-                                        while ($row=mysqli_fetch_assoc($datos_empresa)){
+                                        while ($row=mysqli_fetch_assoc($datos_empleado)){
                                             echo "<option value='$row[id_empleado]'>".$row['cargo']."</option>";
+                                        }
+                                        ?>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="form-group row"><label for="empresa" class="col-md-4 col-form-label text-md-right">Empresa:</label>
+                                <div class="col-md-6">
+                                    <select class="custom-select">
+                                        <option value="" disabled selected hidden>Nada Seleccionado</option>
+                                        <?php
+                                        while ($row2=mysqli_fetch_assoc($datos_empresa)){
+                                            echo "<option value='$row2[id_empresa]'>".$row2['nombreempresa']."</option>";
                                         }
                                         ?>
                                     </select>
