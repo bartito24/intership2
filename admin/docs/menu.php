@@ -137,7 +137,7 @@ if($_SESSION['usuario']==""){
                 <!--    Jefe de registros   -->
                 <?php if( $_SESSION['cargo']=="Jefe de Registros Inscripciones" || $_SESSION['rol']=="administrador"){ ?>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Iniciar Pasantia</a></li>
-                <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Subir Nota</a></li>
+                <li><a class="treeview-item" href="subir_nota.php"><i class="icon fa fa-circle-o"></i>Subir Nota</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Verificaion de Pasantia</a></li>
                 <!--  Jefe de carrera   -->
                 <li><a class="treeview-item" href="visitas.php"><i class="icon fa fa-circle-o"></i>Asignar Tutor</a></li>
