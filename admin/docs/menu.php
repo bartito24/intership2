@@ -154,6 +154,9 @@ if($_SESSION['usuario']==""){
                 <?php if( $_SESSION['cargo']=="Tutor" || $_SESSION['rol']=="administrador"){ ?>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Registrar Visita</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Ver pasantes asignados</a></li>
+
+                <li><a class="treeview-item" href="crear_documento.php"><i class="icon fa fa-circle-o"></i>agregar documento</a></li>
+
                 <?php } ?>
                </ul>
           </li>
