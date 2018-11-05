@@ -33,10 +33,8 @@ class ctrl_requisitos
     }
 
      
-   public function eliminar($dato)
-    {
-        $this->objeto_modelo->set("id_requisitos",$dato );
-        $this->objeto_modelo->eliminar();
+   public function eliminar($id){
+        $this->obj_mod->eliminar($id);
     }
     public function modificar()
     {

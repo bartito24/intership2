@@ -10,23 +10,15 @@ if (isset($_POST["asignar"])) {
 
 					</script>
 			    <?php 	
-}elseif (isset($_GET["id_requisitos"])) 
-	{
-		$obj_ctrl->eliminar($_GET["id_requisitos"]);
+}elseif (isset($_GET['id_requisitos'])){
+    $obj->eliminar($_GET['id_requisitos']);
+    echo "<script> window.location.href='../admin/docs/listar_requisito.php';</script>";
 
-?>
-		<script type="text/javascript">
-			window.location.href="../admin/docs/listar_requisito.php";
-
-		</script>
-<?php
-	}	
+}	
 	elseif (isset($_POST['modificar'])){
     $obj->modificar($_POST);
     echo "<script> window.location.href='../admin/docs/listar_requisito.php';</script>";
 } 
 
 ?>
-
-
 

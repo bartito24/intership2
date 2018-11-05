@@ -35,13 +35,11 @@ class mdl_requisitos
         return $this->obj_con->con_retorno($sql);
     }
 
-    public function eliminar()
+    public function eliminar($id)
     {
-        $sql="delete from requisitos where id_requisitos='$this->id_requisitos'";
-        $this->conec->sin_retorno($sql);
-
+        $sql = "UPDATE requisitos SET activorequisito=0 where id_requisitos=$id;";
+        $this->obj_con->sin_retorno($sql);
     }
-    
 
 
     public function listar_dato()

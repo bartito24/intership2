@@ -25,9 +25,10 @@ $datos=$objeto->listar_requisitos();
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>
-                            <th>Num</th>
+                            <th>Num_Pasantia</th>
                             <th>Nombre</th>
                             <th>descripcion</th>
+                            <th>opciones</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -42,8 +43,8 @@ $datos=$objeto->listar_requisitos();
                             $numpasantia=$row['numpasantia'];
                             $nombrerequisito=$row['nombrerequisito'];
                             $descripcionre=$row['descripcionre'];
-                            
-                            echo "</tr>";
+                            echo "<td><a class='btn btn-danger col-md-5' href='../../enrutador/enr_requisitos.php?id_requisitos=".$id_requisitos."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                            <a class=' btn btn-success col-md-5' href='modificar_requisitos.php?id_requisitos=".$id_requisitos."&nombrerequisito=".$nombrerequisito."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                         }?>
                         </tbody>
