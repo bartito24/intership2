@@ -33,7 +33,11 @@ class ctrl_requisitos
     }
 
      
-
+   public function eliminar($dato)
+    {
+        $this->objeto_modelo->set("id_requisitos",$dato );
+        $this->objeto_modelo->eliminar();
+    }
     public function modificar()
     {
         $sql="UPDATE nota SET nombrerequisito='$this->nombrerequisito',numpasantia='$this->numpasantia', descripcionre='$this->descripcionre' where id_requisitos='$this->id_requisitos';";

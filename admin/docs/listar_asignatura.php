@@ -1,49 +1,54 @@
 <?php
-include_once ('menu.php');
-include_once ('../../modelo/mdl_requisitos.php');
-$objeto=new mdl_requisitos();
-$datos=$objeto->listar_requisitos();
+include_once('menu.php');
+include_once ('../../modelo/mdl_asignatura.php');
+$objeto=new mdl_asignatura();
+$datos=$objeto->listar();
 ?>
 
 <main class="app-content">
     <div class="app-title">
         <div>
-            <h1><i class="fa fa-th-list"></i>Requisitos</h1>
-            <p>Listado de Requisitos registrados en el sistema</p>
+            <h1><i class="fa fa-th-list"></i> asignaturas</h1>
+            <p>Listado de asignaturas registrados en el sistema</p>
         </div>
         <ul class="app-breadcrumb breadcrumb side">
             <li class="breadcrumb-item"><i class="fa fa-home fa-lg"></i></li>
-            <li class="breadcrumb-item">Requisitos</li>
-            <li class="breadcrumb-item active"><a href="#">Tabla Requisitos</a></li>
+            <li class="breadcrumb-item">asignaturas</li>
+            <li class="breadcrumb-item active"><a href="#">Tabla asignaturas</a></li>
         </ul>
     </div>
     <div class="row">
         <div class="col-md-12">
             <div class="tile">
                 <div class="tile-body">
-                    <center><a class="btn btn-secondary" href="requisitos.php">Crear Carrera</a></center>
+                    <center><a class="btn btn-secondary" href="crear_asignatura.php">Crear asignatura</a></center>
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>
-                            <th>Num</th>
-                            <th>Nombre</th>
-                            <th>descripcion</th>
+                            <th>id_asignatura</th>
+                            <th>nombreasignatura</th>
+                            <th>nivel</th>
+                            <th>descripcionasig</th>
+                            <th>activoasignatura</th>
                         </tr>
                         </thead>
                         <tbody>
                         <?php
+                        $num=1;
                         while($row=mysqli_fetch_assoc($datos)){
                             echo "<tr>";
-                            echo "<type='hidden'"."<td>".$row['id_requisitos']."</td>";
-                            echo "<td>".$row['numpasantia']."</td>";
-                            echo "<td>".$row['nombrerequisito']."</td>";
-                            echo "<td>".$row['descripcionre']."</td>";
-                            $id_requisitos=$row['id_requisitos'];
-                            $numpasantia=$row['numpasantia'];
-                            $nombrerequisito=$row['nombrerequisito'];
-                            $descripcionre=$row['descripcionre'];
-                            
-                            echo "</tr>";
+                            echo "<td>$num</td>";
+                            echo "<td hidden>".$row['id_asignatura']."</td>";
+                            echo "<td>".$row['nombreasignatura']."</td>";
+                            echo "<td>".$row['nivel']."</td>";
+                            echo "<td>".$row['descripcionasig']."</td>";
+                            $id_asignatura=$row['id_asignatura'];
+                            $nombre=$row['nombreasignatura'];
+                            $nivel=$row['nivel'];
+                            $descripcionasig=$row['descripcionasig'];
+                            $num+=1;
+                            echo "<td><a class='btn btn-danger col-md-5' href='../../enrutador/enr_asignatura.php?id_carrera=".$id_asignatura."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
+                            <a class=' btn btn-success col-md-5' href='modificar_asignatura.php?id_asignatura=".$id_asignatura."&nombre=".$nombre."&nivel=".$nivel."&descripcionasig=".$descripcionasig."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
                             echo "</tr>";
                         }?>
                         </tbody>
