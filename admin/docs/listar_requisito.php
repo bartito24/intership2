@@ -25,9 +25,8 @@ $datos=$objeto->listar_requisitos();
                     <table class="table table-hover table-bordered" id="sampleTable">
                         <thead class="thead-dark">
                         <tr>
-                            
-                            <th>Nombre</th>
                             <th>Num</th>
+                            <th>Nombre</th>
                             <th>descripcion</th>
                             <th>Opciones</th>
                         </tr>
@@ -37,12 +36,12 @@ $datos=$objeto->listar_requisitos();
                         while($row=mysqli_fetch_assoc($datos)){
                             echo "<tr>";
                             echo "<type='hidden'"."<td>".$row['id_requisitos']."</td>";
-                            echo "<td>".$row['nombrerequisito']."</td>";
                             echo "<td>".$row['numpasantia']."</td>";
+                            echo "<td>".$row['nombrerequisito']."</td>";
                             echo "<td>".$row['descripcionre']."</td>";
                             $id_requisitos=$row['id_requisitos'];
-                            $nombrerequisito=$row['nombrerequisito'];
                             $numpasantia=$row['numpasantia'];
+                            $nombrerequisito=$row['nombrerequisito'];
                             $descripcionre=$row['descripcionre'];
                             echo "<td><a class='btn btn-danger col-md-5' href='../../controlador/ctrl_requisitos.php?id_requisitos=".$id_requisitos."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
                             <a class=' btn btn-success col-md-5' href='modificar_requisitos.php?id_requisitos=".$id_requisitos."&nombrerequisito=".$nombrerequisito."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
