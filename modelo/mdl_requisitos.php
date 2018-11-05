@@ -41,6 +41,8 @@ class mdl_requisitos
         $this->conec->sin_retorno($sql);
 
     }
+    
+
 
     public function listar_dato()
     {

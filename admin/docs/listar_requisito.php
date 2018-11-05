@@ -28,7 +28,6 @@ $datos=$objeto->listar_requisitos();
                             <th>Num</th>
                             <th>Nombre</th>
                             <th>descripcion</th>
-                            <th>Opciones</th>
                         </tr>
                         </thead>
                         <tbody>
@@ -43,8 +42,7 @@ $datos=$objeto->listar_requisitos();
                             $numpasantia=$row['numpasantia'];
                             $nombrerequisito=$row['nombrerequisito'];
                             $descripcionre=$row['descripcionre'];
-                            echo "<td><a class='btn btn-danger col-md-5' href='../../controlador/ctrl_requisitos.php?id_requisitos=".$id_requisitos."'><i class='fa fa-trash-o' aria-hidden='true'></i></a>
-                            <a class=' btn btn-success col-md-5' href='modificar_requisitos.php?id_requisitos=".$id_requisitos."&nombrerequisito=".$nombrerequisito."'><i class='fa fa-cog' aria-hidden='true'></i></a></td>";
+                            
                             echo "</tr>";
                             echo "</tr>";
                         }?>
