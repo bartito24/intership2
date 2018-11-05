@@ -131,10 +131,33 @@ if($_SESSION['usuario']==""){
 
               </ul>
               <?php  }?>
+
+
+
+
+
+              <!--    Asignatura   -->
+              <?php if ($_SESSION['rol']=='administrador') {?>
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-industry"></i><span class="app-menu__label">Asignatura</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+
+                  <!--<li><a class="treeview-item" href="cursos_externos.php"><i class="icon fa fa-circle-o"></i>Cursos</a></li>
+                  <li><a class="treeview-item" href="listar_cursoexterno.php"><i class="icon fa fa-circle-o"></i>Listar Cursos</a></li>-->
+                  <li><a class="treeview-item" href="crear_asignatura.php"><i class="icon fa fa-plus-square"></i>Crear Asignatura</a></li>
+                  <li><a class="treeview-item" href="listar_asignatura.php"><i class="icon fa fa-list"></i>Listar Asignatura</a></li>
+
+              </ul>
+              
+
+
+<?php  }?>
+
+
+
 <!--    Tramites      -->
           <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-database"></i><span class="app-menu__label">Pasantias</span><i class="treeview-indicator fa fa-angle-right"></i></a>
             <ul class="treeview-menu">
-                <!--    Jefe de registros   -->
+                <-!-    Jefe de registros   -->
                 <?php if( $_SESSION['cargo']=="Jefe de Registros Inscripciones" || $_SESSION['rol']=="administrador"){ ?>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Iniciar Pasantia</a></li>
                 <li><a class="treeview-item" href="#"><i class="icon fa fa-circle-o"></i>Subir Nota</a></li>
