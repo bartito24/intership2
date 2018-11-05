@@ -165,9 +165,12 @@ if($_SESSION['usuario']==""){
           <ul class="treeview-menu">
           <li><a class="treeview-item" href="requisitos.php"><i class="icon fa fa-circle-o"></i>Crear Requisito</a></li>
           <li><a class="treeview-item" href="listar_requisito.php"><i class="icon fa fa-circle-o"></i>listar Requisito</a></li>
-              <li><a class="treeview-item" href="pagina_informativa.php"><i class="icon fa fa-circle-o"></i>Requisitos Estudiante</a></li>
-              <li><a class="treeview-item" href="pagina_info.php"><i class="icon fa fa-circle-o"></i>Requisitos Tutor</a></li>
-              <?php if ($_SESSION['rol']=='administrador') {?>
+          
+          <li><a class="treeview-item" href="listar_documento.php"><i class="icon fa fa-circle-o"></i>listar Documentos</a></li>
+
+          <li><a class="treeview-item" href="pagina_informativa.php"><i class="icon fa fa-circle-o"></i>Requisitos Estudiante</a></li>
+          <li><a class="treeview-item" href="pagina_info.php"><i class="icon fa fa-circle-o"></i>Requisitos Tutor</a></li>
+         <?php if ($_SESSION['rol']=='administrador') {?>
             
             <!--<li><a class="treeview-item" href="form-samples.html"><i class="icon fa fa-circle-o"></i> Form Samples</a></li>
             <li><a class="treeview-item" href="form-notifications.html"><i class="icon fa fa-circle-o"></i> Form Notifications</a></li>-->

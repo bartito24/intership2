@@ -34,7 +34,7 @@
 
                             <div class="form-group row"><label for="nombredoc" class="col-md-4 col-form-label text-md-right">Nombre Documento:</label><div class="col-md-6"><input type="text" name="nombredoc" id="nombredoc" class="form-control" value="" required autofocus onkeypress="return letras(event);"></div></div>
 
-                            <div class="form-group row"><label for="fechaen" class="col-md-4 col-form-label text-md-right">Fecha Entregada:</label><div class="col-md-6"><input type="text" name="fechaen" id="fechaen" class="form-control" value="" required></div></div>
+                            <div class="form-group row"><label for="fechaentrega" class="col-md-4 col-form-label text-md-right">Fecha Entregada:</label><div class="col-md-6"><input type="date" name="fechaentrega" id="fechaentrega" class="form-control" value="" required autofocus onkeypress="return numeros(event);"></div></div>
 
                             <div class="form-group row"><label for="Respaldo" class="col-md-4 col-form-label text-md-right">Respaldo:</label><div class="col-md-6"><input type="file" name="respaldo" id="respaldo" class="form-control" value="" required autofocus onkeypress="return numeros(event);"></div></div>
 
