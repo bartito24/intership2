@@ -41,7 +41,7 @@
                                              </select>
                                          </div>
                              </div>
-
+                             
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="registrar">
                                         <span class="glyphicon glyphicon-log-in"></span> Registrar

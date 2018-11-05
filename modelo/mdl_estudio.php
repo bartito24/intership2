@@ -5,6 +5,7 @@ class mdl_estudio
     public $id_Carrera;
     public $nombre;
     public $modalidad;
+    public $version;
     public $obj_con;
 
     function __construct()
@@ -12,6 +13,7 @@ class mdl_estudio
         $this->id_Carrera = 0;
         $this->nombre = "";
         $this->modalidad = "";
+        $this->version = 0;
         $this->obj_con = new conexion();
     }
 
