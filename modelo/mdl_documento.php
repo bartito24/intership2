@@ -4,14 +4,14 @@ class mdl_documento
 {
     private $id_documentacion;
     public $nombredoc;
-    public $fechaentregada;
+    public $fechaentrega;
     public $respaldo;
     public $obj_con;
     function __construct()
     {
-        $this->id_documento=0;
+        $this->id_documentacion=0;
         $this->nombredoc="";
-        $this->fechaentregada="";
+        $this->fechaentrega="";
         $this->respaldo="";
         $this->obj_con=new conexion();
     }
@@ -23,15 +23,11 @@ class mdl_documento
 
     public function insertar_documento()
     {
-        $sql="insert into documentacion (nombredoc,fechaentregada) value ('$this->nombredoc',1)";
+        $sql="insert into documentacion (nombredoc, fechaentrega, respaldo) value ('$this->nombredoc',$this->fechaentrega,$this->respaldo)";
         $this->obj_con->sin_retorno($sql);
     }
     public function  listar_documento(){
         $sql="select * from documentacion";
-        return $this->obj_con->con_retorno($sql);
-    }
-    public function  listar_paso(){
-        $sql="select * from paso_plantilla";
         return $this->obj_con->con_retorno($sql);
     }
 }
