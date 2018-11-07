@@ -118,6 +118,16 @@ if($_SESSION['usuario']==""){
                   <li><a class="treeview-item" href="listar_carrera.php"><i class="icon fa fa-list"></i>Listar Carreras</a></li>
 
               </ul>
+
+              <?php  }?>
+          <!--    Carreras      -->
+          <?php if ($_SESSION['rol']=='administrador') {?>
+          <li class="treeview"><a class="app-menu__item" href="#" data-toggle="treeview"><i class="app-menu__icon fa fa-bed"></i><span class="app-menu__label">Cuaderno</span><i class="treeview-indicator fa fa-angle-right"></i></a>
+              <ul class="treeview-menu">
+                  <li><a class="treeview-item" href="crear_cuaderno.php"><i class="icon fa fa-plus-square"></i>Crear Cuaderno</a></li>
+                  <li><a class="treeview-item" href="listar_cuaderno.php"><i class="icon fa fa-list"></i>Listar Cuaderno</a></li>
+
+              </ul>
               <?php  }?>
               <!--    Empresas   -->
               <?php if ($_SESSION['rol']=='administrador') {?>
