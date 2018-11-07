@@ -33,18 +33,19 @@
                     <div class="tile-body">
                         <form name="f1" action="../../enrutador/enr_cuaderno.php" method="post" autocomplete="off" required>
                             <div class="form-group row"><label for="id_cuadernillo" class="col-md-4 col-form-label text-md-right">id_cuadernillo:</label>
-                            <div class="col-md-6"><input type="text" name="id_cuadernillo" id="id_cuadernillo" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
+                            <div class="col-md-6"><input type="number" name="id_cuadernillo" id="id_cuadernillo" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
                             
                              <div class="form-group row"><label for="fecha_registro" class="col-md-4 col-form-label text-md-right">fecha_registro:</label>
                             <div class="col-md-6"><input type="date" name="fecha_registro" id="fecha_registro" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
                             
                             <div class="form-group row"><label for="fecha" class="col-md-4 col-form-label text-md-right">fecha:</label>
-                            <div class="col-md-6"><input type="datetime" name="fecha" id="fecha" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
+                            <div class="col-md-6"><input type="date" name="fecha" id="fecha" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
                             
                             <div class="form-group row"><label for="decripcion" class="col-md-4 col-form-label text-md-right">decripcion:</label>
                             <div class="col-md-6"><input type="text" name="decripcion" id="decripcion" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
 
-                             <div  class="form-group row"><label for="numero_semana" class="col-md-4 col-form-label text-md-right">numero_semana:</label><div class="col-md-6">
+                             <div  class="form-group row"><label for="numero_semana" class="col-md-4 col-form-label text-md-right">numero_semana:</label>
+                                        <div class="col-md-6">
                                              <select class="custom-select" name="numero_semana"  id="numero_semana">
                                                 <option>Semana 1</option>
                                                 <option>Semana 2</option>
@@ -55,9 +56,7 @@
                                              </select>
                                          </div>
                              </div>
-                             <div class="form-group row"><label for="id_estudiante" class="col-md-4 col-form-label text-md-right">id_estudiante:</label>
-                            <div class="col-md-6"><input type="text" name="id_estudiante" id="id_estudiante" class="form-control" value="" required autofocus onkeypress="return sololetras(event);"></div></div>
-
+                          
                              
                             <div class="form-group row" style="text-align:center"><div class="col-md-4">
                                     <button type="submit" class="btn btn-outline-primary" name="registrar">

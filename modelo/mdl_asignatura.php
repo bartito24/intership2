@@ -5,7 +5,7 @@ class mdl_asignatura
     public $id_asignatura;
     public $nombreasignatura;
     public $nivel;
-    public $descripcionasig;
+    public $descripcion;
     public $activoasignatura;
     public $obj_con;
 
@@ -15,7 +15,7 @@ class mdl_asignatura
         $this->id_asignatura = 0;
         $this->nombreasignatura = "";
         $this->nivel = 0;
-        $this->descripcionasig = 0;
+        $this->descripcion = "";
         $this->activoasignatura = 0;
         $this->obj_con = new conexion();
     }

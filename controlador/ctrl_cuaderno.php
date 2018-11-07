@@ -1,63 +1,38 @@
-<?php 
+
+<?php
+
 require("../modelo/mdl_cuaderno.php");
 
+class ctrl_cuaderno{
+    public $obj_mod;
 
-class ctrl_cuaderno
-{
-	public $objeto_modelo;
+    public function __construct(){
+        $this->obj_mod=new mdl_cuaderno();
+    }
 
-
-	function __construct()
-	{
-		$this->objeto_modelo=new mdl_cuaderno();
-		
-	}
-
-
-public function insertar($p)
-{
-	/*print_r($p);
-	echo $p["horaRecepcion"]."-------";*/
-	$this->objeto_modelo->set("idCuaderno",$p["idCuaderno"]);
-	$this->objeto_modelo->set("idEstudiante",$p["idEstudiante"]);
-	$this->objeto_modelo->set("fecha",$p["fecha"]);
-	$this->objeto_modelo->set("observacion",$p["observacion"]);
-	
-
-	$this->objeto_modelo->insertar();
-}
-
-public function listar()
-{
-	return $this->objeto_modelo->listar();
-}
-
-public function eliminar($eli)
-{
-	$this->objeto_modelo->set("idCuaderno",$eli );
-	$this->objeto_modelo->eliminar();
-}
-
-public function listar_dato($dato)
-{
-		$this->objeto_modelo->set("idCuaderno",$dato);
-
-		$resp=$this->objeto_modelo->listar_dato();
-
-		return $resp;
-}
-
-public function modificar($p)
-{
-	$this->objeto_modelo->set("idCuaderno",$p["idCuaderno"]);
-	$this->objeto_modelo->set("idEstudiante",$p["idEstudiante"]);
-	$this->objeto_modelo->set("fecha",$p["fecha"]);
-	$this->objeto_modelo->set("observacion",$p["observacion"]);
-
-	$this->objeto_modelo->modificar();
-}
-
-
+    public function insertar($p){
+        print_r($p);
+        $this->obj_mod->set("id_cuadernillo" ,$p['id_cuadernillo']);
+        $this->obj_mod->set("fecha_registro" ,$p['fecha_registro']);
+        $this->obj_mod->set("fecha" ,$p['fecha']);
+        $this->obj_mod->set("decripcion" ,$p['decripcion']);
+        $this->obj_mod->set("numero_semana" ,$p['numero_semana']);
+        $this->obj_mod->insertar();
+    }
+    public function modificar($p){
+        $this->obj_mod->set("id_cuadernillo" ,$p['id_cuadernillo']);
+        $this->obj_mod->set("fecha_registro" ,$p['fecha_registro']);
+        $this->obj_mod->set("fecha" ,$p['fecha']);
+        $this->obj_mod->set("decripcion" ,$p['decripcion']);
+        $this->obj_mod->set("numero_semana" ,$p['numero_semana']);
+        $this->obj_mod->modificar();
+    }
+    public function eliminar($id){
+        $this->obj_mod->eliminar($id);
+    }
 }
 
 ?>
+
+
+
